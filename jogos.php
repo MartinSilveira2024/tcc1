@@ -39,7 +39,7 @@ $id_categoria = $_GET['id_categoria'];
             echo '<tr>';
             echo '<td>' . $info['nome_jogo'] ;
             echo '<td>' . $info['quant_forum_jogo']. '</td> <br><br>';
-            echo '<td> <a href="categorias.php"> Entrar </a>';
+            echo '<td> <a href="teste_cards.php?id_categoria=' . $info["id_categoria"] . '""> Entrar </a>';
             echo '</tr>';
             
             if ($info['quant_forum_jogo'] == 0) {
