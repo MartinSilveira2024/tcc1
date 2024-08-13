@@ -34,7 +34,7 @@ $id_categoria = $_GET['id_categoria'];
          echo "<div class='container'>";
          echo "<div class='container_card'>";
          echo  "<article class='article_card'>";
-         echo "<img src='uploads/$arq' width='100px' height='100px' class='card_img'>";
+         echo "<img src='../uploads/$arq' width='100px' height='100px' class='card_img'>";
          echo   "<div class='card_data'>";
          echo   "<span class='card_title'>" . $info['nome_jogo'] . "</span>";
          echo   "<h2 class='description_card'>" . $info['empresa_jogo'] . "</h2>";
