@@ -1,7 +1,9 @@
 <?php
 include_once "conecta.php";
-$nome = $_POST['titulo'];
-$sub = $_POST['sub'];
+$pastaDestino = "/uploads/";
+$categoria = $_POST['categoria'];
+$nome = $_POST['nome_jogo'];
+$sub = $_POST['empresa_jogo'];
 $tit = $_POST['corp_forum'];
 
 
