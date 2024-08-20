@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-
+$id_jogo = $_GET['id_jogo'];
 /*(isset($_SESSION['usuario']) == false) {
   echo"realize o login";
  }
@@ -23,7 +23,7 @@ session_start();
 
     <?php
     include "conecta.php";
-    $sql = "SELECT * FROM categorias";
+    $sql = "SELECT * FROM jogos";
     $result = mysqli_query($connect, $sql);
     if ($result) {
         $infos = mysqli_fetch_all($result, MYSQLI_ASSOC);
