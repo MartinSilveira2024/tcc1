@@ -2,6 +2,7 @@
 $pastaDestino = "/uploads/";
 $nome = $_POST['titulo'];
 $sub = $_POST['sub'];
+$categoria = $_POST['id_categoria'];
 // verificar se o tamanho do arquivo é maior que 2 MB
 
 // verificar se o arquivo é uma imagem
@@ -29,7 +30,7 @@ $fezUpload = move_uploaded_file(
     $_FILES['arquivo']['tmp_name'], __DIR__. $pastaDestino . $nomeArquivo . "." . $extensao
 );
     $conexao = mysqli_connect("localhost", "root", "", "tcc");
-    $sql = "INSERT INTO jogos (nome_jogo, empresa_jogo, foto_jogo) VALUES ('$nome','$sub','$nomeArquivo.$extensao')";
+    $sql = "INSERT INTO jogos (nome_jogo, empresa_jogo, foto_jogo, id_categoria) VALUES ('$nome','$sub','$nomeArquivo.$extensao', $categoria)";
     $resultado = mysqli_query($conexao, $sql);
     if ($resultado != false) {
         // se for uma alteração de arquivo
@@ -45,5 +46,5 @@ $fezUpload = move_uploaded_file(
                 }
             }
         }
-        header("Location: index.php");
+        header("Location: ../categorias.php");
     } 
