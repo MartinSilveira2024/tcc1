@@ -24,7 +24,6 @@ if (getimagesize($_FILES['arquivo']['tmp_name']) === false) {
 }
 
 $nomeArquivo = uniqid();
-
 // se deu tudo certo até aqui, faz o upload
 $fezUpload = move_uploaded_file(
     $_FILES['arquivo']['tmp_name'], __DIR__. $pastaDestino . $nomeArquivo . "." . $extensao
