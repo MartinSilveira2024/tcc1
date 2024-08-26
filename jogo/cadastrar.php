@@ -31,7 +31,7 @@ foreach ($infos as $info) {
 ?>
     Nome do jogo:<input type="text" name="titulo"> <br>
     Empresa do jogo:<input type="text" name="sub"> <br>
-    <input type="submit" value="enviar">
+    <input type="submit" value="Enviar">
     </form>
 </body>
 </html>

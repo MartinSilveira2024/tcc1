@@ -34,6 +34,11 @@
           <span>senha</span>
           <input type="password" name="senha" class="input" required> 
         </label>
+
+        <label class="login__label">
+          <span>confirmar senha</span>
+          <input type="password" name="rep_senha" class="input" required> 
+        </label>
       </div>
 
       <input type="submit" value="Cadastrar">

@@ -41,10 +41,6 @@ $id_categoria = $_GET['id_categoria'];
          echo   "<a href='#'class='card_buttom'>Entre</a>";
          echo   "</div>";
          echo   "</article>";
-            
-            if ($info['quant_forum_jogo'] == 0) {
-                echo "não tem jogos cadastrados nessa categoria";
-            }
         }
 
     ?>
