@@ -27,24 +27,25 @@ if (getimagesize($_FILES['arquivo']['tmp_name']) === false) {
 $nomeArquivo = uniqid();
 // se deu tudo certo até aqui, faz o upload
 $fezUpload = move_uploaded_file(
-    $_FILES['arquivo']['tmp_name'], __DIR__. $pastaDestino . $nomeArquivo . "." . $extensao
+    $_FILES['arquivo']['tmp_name'],
+    __DIR__ . $pastaDestino . $nomeArquivo . "." . $extensao
 );
-    $conexao = mysqli_connect("localhost", "root", "", "tcc");
-    $sql = "INSERT INTO jogos (nome_jogo, empresa_jogo, foto_jogo, id_categoria) VALUES ('$nome','$sub','$nomeArquivo.$extensao', $categoria)";
-    $resultado = mysqli_query($conexao, $sql);
-    if ($resultado != false) {
-        // se for uma alteração de arquivo
-        if (isset($_POST['arquivo'])) {
-            $apagou = unlink(__DIR__ . $pastaDestino . $_POST['nome_arquivo']);
-            if ($apagou == true) {
-                $sql = "DELETE FROM jogos WHERE nome_arquivo='" 
-                        . $_POST['arquivo'] . "'";
-                $resultado2 = mysqli_query($conexao, $sql);
-                if ($resultado2 == false) {
-                    echo "Erro ao apagar o arquivo do banco de dados.";
-                    die();
-                }
+$conexao = mysqli_connect("localhost", "root", "", "tcc1");
+$sql = "INSERT INTO jogos (nome_jogo, empresa_jogo, foto_jogo, id_categoria) VALUES ('$nome','$sub','$nomeArquivo.$extensao', $categoria)";
+$resultado = mysqli_query($conexao, $sql);
+if ($resultado != false) {
+    // se for uma alteração de arquivo
+    if (isset($_POST['arquivo'])) {
+        $apagou = unlink(__DIR__ . $pastaDestino . $_POST['nome_arquivo']);
+        if ($apagou == true) {
+            $sql = "DELETE FROM jogos WHERE nome_arquivo='"
+                . $_POST['arquivo'] . "'";
+            $resultado2 = mysqli_query($conexao, $sql);
+            if ($resultado2 == false) {
+                echo "Erro ao apagar o arquivo do banco de dados.";
+                die();
             }
         }
-        header("Location: ../categorias.php");
-    } 
+    }
+    header("Location: ../categorias.php");
+}
