@@ -15,15 +15,15 @@ $id_jogo = $_GET['id_jogo'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body>
 
 
     <?php
-    include "conecta.php";
-    $sql = "SELECT * FROM jogos";
+    include "../conecta.php";
+    $sql = "SELECT * FROM forum";
     $result = mysqli_query($connect, $sql);
     if ($result) {
         $infos = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -42,11 +42,12 @@ $id_jogo = $_GET['id_jogo'];
 
     <div id="container">
         <table id="table">
-            <caption>Listagem de categorias</caption>
+            <caption>Listagem de foruns</caption>
             <thead>
                 <tr>
-                    <th>Categoria</th>
-                    <th>Quantidade de jogos</th>
+                    <th>Autor</th>
+                    <th>Titulo</th>
+                    <th>Subtitulo</th>
                     <th>Opções</th>
                 </tr>
             </thead>
@@ -55,9 +56,10 @@ $id_jogo = $_GET['id_jogo'];
 
                 foreach ($infos as $info) {
                     echo '<tr>';
-                    echo '<td>' . $info['nome_categoria'] . '</td>';
-                    echo '<td>' . $info['quant_jogos'] . '</td>';
-                    echo '<td> <a href="./jogo/teste_cards.php?id_categoria=' . $info["id_categoria"] . '"> Entrar </a> </td>';
+                    echo '<td>' . $info['id_usario'] . '</td>';
+                    echo '<td>' . $info['titulo'] . '</td>';
+                    echo '<td>' . $info['subtitulo'] . '</td>';
+                    echo '<td> <a href="pag_forum.php?id_forum=' . $info["id_forum"] . '"> Entrar </a> </td>';
                     echo '</tr>';
                 }
 

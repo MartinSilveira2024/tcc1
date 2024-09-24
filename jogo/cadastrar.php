@@ -1,5 +1,5 @@
 <?php 
-    include "conecta.php";
+    include "../conecta.php";
     $sql = "SELECT * FROM categorias";
     $result = mysqli_query($connect, $sql);
     if($result) {

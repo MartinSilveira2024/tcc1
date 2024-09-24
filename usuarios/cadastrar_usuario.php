@@ -44,7 +44,7 @@
       <input type="submit" value="Cadastrar">
       </form>
       <div class="wrapper">
-        <a href="login_usuario" class="login__link">Login</a>
+        <a href="../index.php" class="login__link">Login</a>
       </div>
 
     </section>

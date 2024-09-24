@@ -6,7 +6,7 @@
   <meta charset="UTF">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./usuarios/style.css">
   
   <script src="./script.js" defer></script>
 
@@ -36,7 +36,7 @@
 
       <div class="wrapper">
   
-        <a href="cadastrar_usuario.php" class="login__link">criar conta</a>
+        <a href="./usuarios/cadastrar_usuario.php" class="login__link">criar conta</a>
       </div>
 
     </section>

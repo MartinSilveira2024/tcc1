@@ -1,5 +1,5 @@
 <?php 
-    include "conecta.php";
+    include "../conecta.php";
     $sql = "SELECT * FROM jogos";
     $result = mysqli_query($connect, $sql);
     if($result) {
@@ -21,7 +21,7 @@
    <body>
 
    <?php
-    include "conecta.php";
+    include "../conecta.php";
     $sql = "SELECT * FROM jogos";
     $result = mysqli_query($connect, $sql);
     
@@ -37,7 +37,7 @@
          echo   "<div class='card_data'>";
          echo   "<span class='card_title'>" . $info['nome_jogo'] . "</span>";
          echo   "<h2 class='description_card'>" . $info['empresa_jogo'] . "</h2>";
-         echo   "<a href='#'class='card_buttom'>Entre</a>";
+         echo   '<a href="../forum/listar_foruns.php?id_jogo=' . $info["id_jogo"] . '"> Entrar </a>';
          echo   "</div>";
          echo   "</article>";
         }
