@@ -10,45 +10,47 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="container main">
-            <div class="row">
-                <div class="col-md-6 side-image">
 
-                    <!-------------      image     ------------->
+    <form action="cadastrar_forum.php" method="post">
+        <div class="wrapper">
+            <div class="container main">
+                <div class="row">
+                    <div class="col-md-6 side-image">
 
-                    <img src="images/white.png" alt="">
+                        <!-------------      image     ------------->
 
-                </div>
-                <div class="col-md-6 right">
+                        <img src="images/white.png" alt="">
 
-                    <div class="input-box">
+                    </div>
+                    <div class="col-md-6 right">
 
-                        <header>Criar Forum</header>
-                        <div class="input-field">
-                            <input type="text" class="input" id="email" required="" autocomplete="off"> <br>
-                            <label for="pass">Titulo</label>
-                        </div>
-                        <div class="input-field">
-                            <input type="text" class="input" id="email" required="" autocomplete="off"> <br>
-                            <label for="pass">Subtitulo</label>
-                        </div>
-                        <div class="input-field">
+                        <div class="input-box">
 
+                            <header>Criar Forum</header>
                             <div class="input-field">
-                                <Textarea> </Textarea> <br>
+                                <input type="text" class="input" name="titulo" required> <br>
+                                <label for="pass">Titulo</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" class="input" name="subtitulo" required> <br>
+                                <label for="pass">Subtitulo</label>
                             </div>
                             <div class="input-field">
 
-                                <input type="submit" class="submit" value="Criar Forum">
+                                <div class="input-field">
+                                    <Textarea name="corpo_texto" required> </Textarea> <br>
+                                </div>
+                                <div class="input-field">
+
+                                    <input type="submit" class="submit" value="Criar Forum">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 
