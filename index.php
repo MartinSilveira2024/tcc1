@@ -8,12 +8,12 @@
 
   <link rel="stylesheet" href="./usuarios/style.css">
   
-  <script src="./script.js" defer></script>
+  <script src="./usuarios/script.js" defer></script>
 
   <title>Forum Games</title>
 </head>
 <body>
-<form action="nivel_acesso.php" method="post">
+<form action="./usuarios/nivel_acesso.php" method="post">
   <main>
     <section class="login">
       <div class="wrapper">

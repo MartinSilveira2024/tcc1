@@ -19,7 +19,7 @@ $query_cadastros = mysqli_query($connect,$sql);
 if ($query_cadastros)
 
 {
-	header('Location: login_usuario.php');
+	header('Location: ./login_usuario.php');
 	
 }
 
