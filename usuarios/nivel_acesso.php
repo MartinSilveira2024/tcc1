@@ -13,9 +13,9 @@ if ($usuario != null) {
         session_start();
         $_SESSION['usuario'] = $usuario;
         if ($usuario['nivel_acesso'] == 'usr') {
-            header('location: ../categorias.php');
+            header('location: ../jogo/teste_cards.php');
         } else if ($usuario['nivel_acesso'] == 'adm') {
-            header('location: ../categorias_adm.php');
+            header('location: ../jogo/teste_cards.php');
         }
     } else {
         echo "senha errada";

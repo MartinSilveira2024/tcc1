@@ -1,5 +1,4 @@
 <?php 
-$id_categoria = $_GET['id_categoria'];
     include "conecta.php";
     $sql = "SELECT * FROM jogos";
     $result = mysqli_query($connect, $sql);
@@ -23,7 +22,7 @@ $id_categoria = $_GET['id_categoria'];
 
    <?php
     include "conecta.php";
-    $sql = "SELECT * FROM jogos WHERE id_categoria = $id_categoria";
+    $sql = "SELECT * FROM jogos";
     $result = mysqli_query($connect, $sql);
     
     ?>
