@@ -17,9 +17,8 @@
                 <div class="row">
                     <div class="col-md-6 side-image">
 
-                        <!-------------      image     ------------->
 
-                        <img src="images/white.png" alt="">
+                
 
                     </div>
                     <div class="col-md-6 right">

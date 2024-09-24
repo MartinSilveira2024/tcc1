@@ -30,7 +30,7 @@ $fezUpload = move_uploaded_file(
     $_FILES['arquivo']['tmp_name'],
     __DIR__ . $pastaDestino . $nomeArquivo . "." . $extensao
 );
-$conexao = mysqli_connect("localhost", "root", "", "tcc1");
+$conexao = mysqli_connect("localhost", "root", "", "tcc");
 $sql = "INSERT INTO jogos (nome_jogo, empresa_jogo, foto_jogo, id_categoria) VALUES ('$nome','$sub','$nomeArquivo.$extensao', $categoria)";
 $resultado = mysqli_query($conexao, $sql);
 if ($resultado != false) {
