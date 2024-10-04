@@ -14,7 +14,7 @@ $query_cadastros = mysqli_query($conexao,$sql);
 if ($query_cadastros)
 
 {
-	header('Location: cad_forum.php');
+	header('Location: ../jogo/teste_cards.php');
 	
 }
 

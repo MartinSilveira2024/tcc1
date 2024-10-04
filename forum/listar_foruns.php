@@ -45,7 +45,7 @@ $id_jogo = $_GET['id_jogo'];
             <caption>Listagem de foruns</caption>
             <thead>
                 <tr>
-                    <th>Titulo</th>
+                    <th>Titulo </th>
                     <th>Subtitulo</th>
                     <th>Opções</th>
                 </tr>
