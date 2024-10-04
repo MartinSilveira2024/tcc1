@@ -23,7 +23,7 @@ $id_jogo = $_GET['id_jogo'];
 
     <?php
     include "../conecta.php";
-    $sql = "SELECT * FROM forum";
+    $sql = "SELECT * FROM forum WHERE id_jogo = $id_jogo";
     $result = mysqli_query($connect, $sql);
     if ($result) {
         $infos = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -45,7 +45,6 @@ $id_jogo = $_GET['id_jogo'];
             <caption>Listagem de foruns</caption>
             <thead>
                 <tr>
-                    <th>Autor</th>
                     <th>Titulo</th>
                     <th>Subtitulo</th>
                     <th>Opções</th>
@@ -56,7 +55,6 @@ $id_jogo = $_GET['id_jogo'];
 
                 foreach ($infos as $info) {
                     echo '<tr>';
-                    echo '<td>' . $info['id_usario'] . '</td>';
                     echo '<td>' . $info['titulo'] . '</td>';
                     echo '<td>' . $info['subtitulo'] . '</td>';
                     echo '<td> <a href="pag_forum.php?id_forum=' . $info["id_forum"] . '"> Entrar </a> </td>';

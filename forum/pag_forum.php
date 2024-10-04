@@ -1,3 +1,10 @@
+<?php 
+
+session_start();
+$id_forum = $_GET['id_forum'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +16,8 @@
 <body>
 
     <?php
-    include "conecta.php";
-    $sql = "SELECT * FROM forum";
+    include "../conecta.php";
+    $sql = "SELECT * FROM forum WHERE id_forum = $id_forum";
     $result = mysqli_query($connect, $sql);
     if($result) {
         $infos = mysqli_fetch_all($result, MYSQLI_ASSOC);

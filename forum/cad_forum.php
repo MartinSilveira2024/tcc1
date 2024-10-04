@@ -1,3 +1,14 @@
+<?php 
+    include "../conecta.php";
+    $sql = "SELECT * FROM jogos";
+    $result = mysqli_query($connect, $sql);
+    if($result) {
+        $infos = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    } else {
+        echo "erro ao conectar no bd";
+    }
+    ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -18,7 +29,7 @@
                     <div class="col-md-6 side-image">
 
 
-                
+
 
                     </div>
                     <div class="col-md-6 right">
@@ -26,6 +37,16 @@
                         <div class="input-box">
 
                             <header>Criar Forum</header>
+
+                            <?php
+                            echo '<label for="cars">Insira o jogo do forum:</label>';
+                            echo '<select name="id_jogo" id="cars">';
+                            foreach ($infos as $info) {
+                                echo ' <option value=' .  $info["id_jogo"] . '>' .  $info['nome_jogo'] . '</option> ';
+                            }
+
+                            echo '</select> <br> <br>';
+                            ?>
                             <div class="input-field">
                                 <input type="text" class="input" name="titulo" required> <br>
                                 <label for="pass">Titulo</label>

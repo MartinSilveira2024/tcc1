@@ -16,13 +16,16 @@ if($senha == $senha2) {
 $sql = "INSERT INTO usuarios(nome_user, email_user, senha_user, nivel_acesso) VALUES ('$nome', '$email', '$senha', 'usr')";
 $query_cadastros = mysqli_query($connect,$sql);
 }
+else {
+	echo "Senha incorreta";
+}
 if ($query_cadastros)
 
 {
-	header('Location: ./login_usuario.php');
+	header('Location: ../index.php');
 	
 }
 
 else {
-	echo "deu erro";
+	echo "deu erro"; die;
 }

@@ -18,6 +18,8 @@
     <section class="login">
       <div class="wrapper">
 
+      <img src="../logo.png" class="login_logo">
+
         <h1 class="login__title">CADASTRO</h1>
     
         <label class="login__label">
@@ -51,6 +53,6 @@
 
     <section class="wallpaper"></section>
   </main>
-  
+  <h3>Esta imagem foi retirada do jogo League of legends que foi criado pela empresa Riot Games</h3>
 </body>
 </html>

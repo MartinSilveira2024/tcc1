@@ -59,6 +59,11 @@ main {
   width: 100%;
 }
 
+.login__logo {
+  width: 130px;
+  margin-bottom: 30px;
+}
+
 .input {
   width: 100%;
   background-color: var(--light-grey);

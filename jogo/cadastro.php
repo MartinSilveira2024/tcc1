@@ -47,5 +47,5 @@ if ($resultado != false) {
             }
         }
     }
-    header("Location: ../categorias.php");
+    header("Location: teste_cards.php");
 }

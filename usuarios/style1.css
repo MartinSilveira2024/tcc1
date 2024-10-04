@@ -34,6 +34,11 @@ main {
   padding: clamp(35px, 8%, 70px);
 }
 
+.login_logo {
+  width: 130px;
+  margin-bottom: 30px;
+}
+
 .wrapper {
   width: 100%;
   display: flex;
