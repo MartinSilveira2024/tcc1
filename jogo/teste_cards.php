@@ -38,7 +38,7 @@
          echo   "<span class='card_title'>" . $info['nome_jogo'] . "</span>";
          echo   "<h2 class='description_card'>" . $info['empresa_jogo'] . "</h2>";
          echo   '<a href="../forum/listar_foruns.php?id_jogo=' . $info["id_jogo"] . '"> Entrar </a>';
-         echo   '<a href="../forum/excluir_foruns.php?id_jogo=' . $info["id_jogo"] . '"> Excluir Jogo </a>';
+         echo   '<a href="excluir_jogo.php?id_jogo=' . $info["id_jogo"] . '"> Excluir Jogo </a>';
          echo   "</div>";
          echo   "</article>";
         }
