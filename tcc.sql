@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 08-Out-2024 às 15:07
+-- Tempo de geração: 09-Out-2024 às 16:28
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -94,7 +94,6 @@ CREATE TABLE IF NOT EXISTS `jogos` (
 --
 
 INSERT INTO `jogos` (`id_jogo`, `nome_jogo`, `empresa_jogo`, `quant_forum_jogo`, `id_categoria`, `foto_jogo`) VALUES
-(26, 'Fortnite', 'Epic Games', NULL, 2, '66f30861289bc.jpg'),
 (29, 'League of Legends', 'Riot Games', NULL, 2, '66fff26b4aef1.jpg');
 
 -- --------------------------------------------------------
@@ -112,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `nivel_acesso` varchar(3) NOT NULL,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `email_user` (`email_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `usuarios`
@@ -120,7 +119,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `nome_user`, `email_user`, `senha_user`, `nivel_acesso`) VALUES
 (109, 'das', 'das@gmail.com', '123', 'usr'),
-(118, 'dsadas', 'dsadas@gmail.com', '123', 'usr');
+(118, 'dsadas', 'dsadas@gmail.com', '123', 'usr'),
+(119, 'Thiago Krug', 'ThiagoKrug@gmail.com', '123', 'usr');
 
 --
 -- Restrições para despejos de tabelas

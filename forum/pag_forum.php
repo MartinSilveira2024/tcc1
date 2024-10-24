@@ -33,7 +33,9 @@ $id_forum = $_GET['id_forum'];
             echo $info['subtitulo']. "<br><br>";
             echo $info['corpo_texto']." <br><br>";
         }
-
+        
+        
+        echo '<td> <a href="../coment/cadastrar_coment.php?id_forum=' . $info["id_forum"] . '"> Comentar sobre o forum </a> </td>';
     ?>
 </body>
 </html>
