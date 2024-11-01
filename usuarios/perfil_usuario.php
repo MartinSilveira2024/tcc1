@@ -53,12 +53,10 @@ if ($result) {
                                     <hr class="mt-0 mb-4">
                                     <div class="row pt-1">
                                         <div class="col-6 mb-3">
-                                            <h6>Recent</h6>
-                                            <p class="text-muted">Lorem ipsum</p>
+                                            <a href="excluir_usuario">Excluir perfil</a>
                                         </div>
                                         <div class="col-6 mb-3">
-                                            <h6>Most Viewed</h6>
-                                            <p class="text-muted">Dolor sit amet</p>
+                                            <a href="update_usuario">Editar perfil</a>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-start">

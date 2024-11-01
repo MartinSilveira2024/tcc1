@@ -1,5 +1,10 @@
 <?php 
-    include "../conecta.php";
+   include "../conecta.php";
+session_start();
+if (isset($_SESSION['usuario']) == false) {
+  echo"realize o login";
+  die;
+ }
     $sql = "SELECT * FROM jogos";
     $result = mysqli_query($connect, $sql);
     if($result) {

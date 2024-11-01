@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 09-Out-2024 às 16:28
+-- Tempo de geração: 24-Out-2024 às 19:52
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -48,6 +48,20 @@ INSERT INTO `categorias` (`id_categoria`, `nome_categoria`, `quant_jogos`) VALUE
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `comentarios`
+--
+
+DROP TABLE IF EXISTS `comentarios`;
+CREATE TABLE IF NOT EXISTS `comentarios` (
+  `id_comentario` int NOT NULL AUTO_INCREMENT,
+  `id_forum` int NOT NULL,
+  `coment` varchar(255) NOT NULL,
+  PRIMARY KEY (`id_comentario`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `forum`
 --
 
@@ -63,13 +77,6 @@ CREATE TABLE IF NOT EXISTS `forum` (
   KEY `fk_usuarios` (`id_usuario`),
   KEY `fk_jogo_forum` (`id_jogo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Extraindo dados da tabela `forum`
---
-
-INSERT INTO `forum` (`id_forum`, `id_jogo`, `id_usuario`, `titulo`, `subtitulo`, `corpo_texto`) VALUES
-(34, 29, 109, 'dsadsa', 'sdadsa', ' dsadsa');
 
 -- --------------------------------------------------------
 
@@ -118,8 +125,6 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nome_user`, `email_user`, `senha_user`, `nivel_acesso`) VALUES
-(109, 'das', 'das@gmail.com', '123', 'usr'),
-(118, 'dsadas', 'dsadas@gmail.com', '123', 'usr'),
 (119, 'Thiago Krug', 'ThiagoKrug@gmail.com', '123', 'usr');
 
 --
