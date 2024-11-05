@@ -58,10 +58,10 @@ if ($result) {
                                     <hr class="mt-0 mb-4">
                                     <div class="row pt-1">
                                         <div class="col-6 mb-3">
-                                            <a href="excluir_usuario">Excluir perfil</a>
+                                            <a href="excluir_usuario.php">Excluir perfil</a>
                                         </div>
                                         <div class="col-6 mb-3">
-                                            <a href="update_usuario">Editar perfil</a>
+                                            <a href="tela_update_usuario.php">Editar perfil</a>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-start">

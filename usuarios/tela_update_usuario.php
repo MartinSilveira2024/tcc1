@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style3.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Cadastro</title>
+    <title>Update usuario</title>
 </head>
 
 <body>
 <img src="logo.png" class="login__logo">
 
-    <form action="cadastro_usuario.php" method="post">
+    <form action="update_usuario.php" method="post" enctype="multipart/form-data">
         <div class="wrapper">
             <div class="container main">
                 <div class="row">
@@ -23,7 +23,11 @@
 
                         <div class="input-box">
 
-                            <header>Cadastro</header>
+                            <header>Atualizar infos</header>
+
+                            <div class="input-field">
+                                <input type="file" class="input" name="foto_user" required> <br>
+                            </div>
 
                             <div class="input-field">
                                 <input type="text" class="input" name="nome" required> <br>
@@ -39,13 +43,8 @@
                                 <input type="text" class="input" name="senha" required> <br>
                                 <label for="pass">Senha</label>
                             </div>
-                            <div class="input-field">
-                                <input type="text" class="input" name="rep_senha" required> <br>
-                                <label for="pass">Confirmar senha</label>
-                            </div>
-                            <div class="input-field">
 
-                                    <input type="submit" class="submit" value="Criar Forum">
+                                    <input type="submit" class="submit" value="Atualizar">
                                 </div>
                             </div>
                         </div>
