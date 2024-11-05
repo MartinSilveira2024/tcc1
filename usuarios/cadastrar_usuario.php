@@ -12,7 +12,7 @@
 <body>
 <img src="logo.png" class="login__logo">
 
-    <form action="cadastrar_forum.php" method="post">
+    <form action="../index.php" method="post">
         <div class="wrapper">
             <div class="container main">
                 <div class="row">

@@ -12,7 +12,7 @@
 <body>
 <img src="logo.png" class="login__logo">
 
-    <form action="cadastrar_forum.php" method="post">
+    <form action="./jogo/teste_cards.php" method="post">
         <div class="wrapper">
             <div class="container main">
                 <div class="row">
@@ -34,11 +34,6 @@
                                 <label for="pass">Senha</label>
                             </div>
                             <div class="input-field">
-
-                                <div class="input-field">
-                                    <Textarea name="corpo_texto" required> </Textarea> <br>
-                                </div>
-                                <div class="input-field">
 
                                     <input type="submit" class="submit" value="Criar Forum">
                                 </div>

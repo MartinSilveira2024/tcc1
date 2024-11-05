@@ -1,4 +1,9 @@
 <?php 
+session_start();
+if (isset($_SESSION['usuario']) == false) {
+  echo"realize o login";
+  die;
+ }
     include "../conecta.php";
     $sql = "SELECT * FROM categorias";
     $result = mysqli_query($connect, $sql);
