@@ -1,3 +1,18 @@
+<?php
+session_start();
+require_once "conecta.php";
+$id = $_SESSION['id_usuario'];
+$sql = "SELECT * FROM usuarios WHERE id_usuario = '$id'";
+$result = mysqli_query($connect, $sql);
+if ($result) {
+    $usuario = mysqli_fetch_assoc($result);
+} else {
+    echo mysqli_errno($connect) . ": " . mysqli_error($connect);
+    die();
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -12,7 +27,7 @@
 <body>
 <img src="logo.png" class="login__logo">
 
-    <form action="update_usuario.php" method="post" enctype="multipart/form-data">
+    <form action="update_usuario.php" method="post">
         <div class="wrapper">
             <div class="container main">
                 <div class="row">
@@ -25,22 +40,19 @@
 
                             <header>Atualizar infos</header>
 
-                            <div class="input-field">
-                                <input type="file" class="input" name="foto_user" required> <br>
-                            </div>
 
                             <div class="input-field">
-                                <input type="text" class="input" name="nome" required> <br>
+                                <input type="text" class="input" name="nome" value="<?php echo $usuario['nome_user'] ?>" required> <br>
                                 <label for="pass">Nome de usuario</label>
                             </div>
                             <div class="input-field">
-                                <input type="text" class="input" name="email" required> <br>
+                                <input type="text" class="input" name="email" value="<?php echo $usuario['email_user'] ?>" required> <br>
                                 <label for="pass">Email</label>
                             </div>
                             <div class="input-field">
 
                             <div class="input-field">
-                                <input type="text" class="input" name="senha" required> <br>
+                                <input type="text" class="input" name="senha" value="<?php echo $usuario['senha_user'] ?>" required> <br>
                                 <label for="pass">Senha</label>
                             </div>
 

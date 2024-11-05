@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['usuario']) == false) {
+if (isset($_SESSION['id_usuario']) == false) {
   echo"realize o login";
   die;
  }
@@ -61,7 +61,7 @@ if ($result) {
                                             <a href="excluir_usuario.php">Excluir perfil</a>
                                         </div>
                                         <div class="col-6 mb-3">
-                                            <a href="tela_update_usuario.php">Editar perfil</a>
+                                        <a href="tela_update_usuario.php">Editar perfil</a>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-start">
