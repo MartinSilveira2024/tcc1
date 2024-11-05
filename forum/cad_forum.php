@@ -33,7 +33,7 @@ if (isset($_SESSION['usuario']) == false) {
                 <div class="row">
                     <div class="col-md-6 side-image">
 
-
+                    
 
 
                     </div>

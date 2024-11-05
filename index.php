@@ -1,49 +1,55 @@
-</html>
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
+
 <head>
-  <meta charset="UTF">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="./usuarios/style.css">
-  
-  <script src="./usuarios/script.js" defer></script>
-
-  <title>Forum Games</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Login</title>
 </head>
+
 <body>
-<form action="./usuarios/nivel_acesso.php" method="post">
-  <main>
-    <section class="login">
-      <div class="wrapper">
+<img src="logo.png" class="login__logo">
 
-      <img src="logo.png" class="login__logo">
+    <form action="cadastrar_forum.php" method="post">
+        <div class="wrapper">
+            <div class="container main">
+                <div class="row">
+                    <div class="col-md-6 side-image">
 
-        <h1 class="login__title">LOGIN</h1>
-    
-        <label class="login__label">
-          <span>Email</span>
-          <input type="email" name="email" class="input" required>
-        </label>
-  
-        <label class="login__label">
-          <span>senha</span>
-          <input type="password" name="senha" class="input" required>
-        </label>
-      </div>
-      <input type="submit" value="Logar">
-      </form>
+                    </div>
+                    <div class="col-md-6 right">
 
-      <div class="wrapper">
-  
-        <a href="./usuarios/cadastrar_usuario.php" class="login__link">criar conta</a>
-      </div>
+                        <div class="input-box">
 
-    </section>
+                            <header>Login</header>
 
-    <section class="wallpaper"></section>
-  </main>
-  <h3>Esta imagem foi retirada do jogo League of legends que foi criado pela empresa Riot Games</h3>
+                            <div class="input-field">
+                                <input type="text" class="input" name="titulo" required> <br>
+                                <label for="pass">Email</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" class="input" name="subtitulo" required> <br>
+                                <label for="pass">Senha</label>
+                            </div>
+                            <div class="input-field">
+
+                                <div class="input-field">
+                                    <Textarea name="corpo_texto" required> </Textarea> <br>
+                                </div>
+                                <div class="input-field">
+
+                                    <input type="submit" class="submit" value="Criar Forum">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </form>
+    <h3>Esta imagem foi retirada do jogo League of legends que foi criado pela empresa Riot Games</h3>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+
 </html>
