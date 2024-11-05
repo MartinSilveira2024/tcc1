@@ -17,7 +17,7 @@ if($senha != $senha2) {
 }
 
 if($senha == $senha2) {
-$sql = "INSERT INTO usuarios(nome_user, email_user, senha_user, nivel_acesso) VALUES ('$nome', '$email', '$senha', 'usr')";
+$sql = "INSERT INTO usuarios(nome_user, foto_user, email_user, senha_user, nivel_acesso) VALUES ('$nome', 'user_padrao.jpg','$email', '$senha', 'usr')";
 $query_cadastros = mysqli_query($connect,$sql);
 }
 if ($query_cadastros)

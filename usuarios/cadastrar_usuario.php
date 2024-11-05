@@ -12,7 +12,7 @@
 <body>
 <img src="logo.png" class="login__logo">
 
-    <form action="../index.php" method="post">
+    <form action="cadastro_usuario.php" method="post">
         <div class="wrapper">
             <div class="container main">
                 <div class="row">
@@ -26,21 +26,21 @@
                             <header>Cadastro</header>
 
                             <div class="input-field">
-                                <input type="text" class="input" name="titulo" required> <br>
+                                <input type="text" class="input" name="nome" required> <br>
                                 <label for="pass">Nome de usuario</label>
                             </div>
                             <div class="input-field">
-                                <input type="text" class="input" name="subtitulo" required> <br>
+                                <input type="text" class="input" name="email" required> <br>
                                 <label for="pass">Email</label>
                             </div>
                             <div class="input-field">
 
                             <div class="input-field">
-                                <input type="text" class="input" name="titulo" required> <br>
+                                <input type="text" class="input" name="senha" required> <br>
                                 <label for="pass">Senha</label>
                             </div>
                             <div class="input-field">
-                                <input type="text" class="input" name="subtitulo" required> <br>
+                                <input type="text" class="input" name="rep_senha" required> <br>
                                 <label for="pass">Confirmar senha</label>
                             </div>
                             <div class="input-field">

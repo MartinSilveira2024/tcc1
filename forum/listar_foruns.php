@@ -2,10 +2,6 @@
 
 session_start();
 $id_jogo = $_GET['id_jogo'];
-/*(isset($_SESSION['usuario']) == false) {
-  echo"realize o login";
- }
-  die; */
 ?>
 
 <!DOCTYPE html>

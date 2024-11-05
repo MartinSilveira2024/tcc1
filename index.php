@@ -12,7 +12,7 @@
 <body>
 <img src="logo.png" class="login__logo">
 
-    <form action="./jogo/teste_cards.php" method="post">
+    <form action="./usuarios/nivel_acesso.php" method="post">
         <div class="wrapper">
             <div class="container main">
                 <div class="row">
@@ -26,11 +26,11 @@
                             <header>Login</header>
 
                             <div class="input-field">
-                                <input type="text" class="input" name="titulo" required> <br>
+                                <input type="text" class="input" name="email" required> <br>
                                 <label for="pass">Email</label>
                             </div>
                             <div class="input-field">
-                                <input type="text" class="input" name="subtitulo" required> <br>
+                                <input type="text" class="input" name="senha" required> <br>
                                 <label for="pass">Senha</label>
                             </div>
                             <div class="input-field">

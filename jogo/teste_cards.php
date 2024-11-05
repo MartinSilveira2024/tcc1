@@ -1,6 +1,6 @@
 <?php
-include "../conecta.php";
 session_start();
+include "../conecta.php";
 if (isset($_SESSION['usuario']) == false) {
   echo"realize o login";
   die;

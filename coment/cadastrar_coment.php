@@ -18,7 +18,7 @@ $id_forum = $_GET['id_forum'];
 
 <body>
 
-        <form action="cad_coment.php" method="GET">
+        <form action="../forum/pag_forum.php" method="GET">
         <div class="wrapper">
             <div class="container main">
                 <div class="row">
