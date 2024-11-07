@@ -1,7 +1,7 @@
 <?php 
    include "../conecta.php";
 session_start();
-if (isset($_SESSION['usuario']) == false) {
+if (isset($_SESSION['id_usuario']) == false) {
   echo"realize o login";
   die;
  }

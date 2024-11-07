@@ -4,7 +4,15 @@ if (isset($_SESSION['id_usuario']) == false) {
   echo"realize o login";
   die;
  }
-include "../conecta.php";
+ $id_usuario = $_SESSION['id_usuario'];
+ include "../conecta.php";
+ $sql = "SELECT * FROM usuarios WHERE id_usuario = $id_usuario";
+$result = mysqli_query($connect, $sql);
+if ($result) {
+  $infos = mysqli_fetch_assoc($result);
+} else {
+  echo "erro ao conectar no bd";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,11 +47,11 @@ include "../conecta.php";
                                     <div class="row pt-1">
                                         <div class="col-6 mb-3">
                                             <h6>Email</h6>
-                                            <p class="text-muted"><?php echo $_SESSION['email_user']; ?></p>
+                                            <p class="text-muted"><?php echo $infos['email_user']; ?></p>
                                         </div>
                                         <div class="col-6 mb-3">
                                             <h6>Nome de usuário</s></h6>
-                                            <p class="text-muted"><?php echo $_SESSION['nome']; ?></p>
+                                            <p class="text-muted"><?php echo $infos['nome_user']; ?></p>
                                         </div>
                                     </div>
                                     <hr class="mt-0 mb-4">

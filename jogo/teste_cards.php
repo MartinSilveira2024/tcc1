@@ -28,25 +28,7 @@ if ($result) {
 
 <body>
 
-  <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-    Opções
-  </a>
-
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu de opçõpes</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div>
-        <a href="../usuarios/perfil_usuario.php">Ver Perfil</a>
-      </div>
-      <br>
-      <div>
-        <a href="../usuarios/desconect_usuario.php">Desconectar</a>
-      </div>
-    </div>
-  </div>
+<?php include_once "navbar.php"; ?>
 
   <?php
   include "../conecta.php";
