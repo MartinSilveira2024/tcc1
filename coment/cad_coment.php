@@ -8,4 +8,11 @@ $conexao = mysqli_connect("localhost", "root", "", "tcc");
 $sql = "INSERT INTO comentarios(id_forum, coment) VALUES ('$id_forum','$coment')";
 $query_cadastros = mysqli_query($conexao, $sql);
 
+if ($query_cadastros) {
+    header("Location: ../pag_forum.php");
+}
+else {
+    echo "Erro ao cadastrar comentário";
+}
+
 ?>

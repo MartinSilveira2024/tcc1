@@ -30,13 +30,14 @@
                                 <label for="pass">Email</label>
                             </div>
                             <div class="input-field">
-                                <input type="text" class="input" name="senha" required> <br>
+                                <input type="password" class="input" name="senha" required> <br>
                                 <label for="pass">Senha</label>
                             </div>
                             <div class="input-field">
 
-                                    <input type="submit" class="submit" value="Criar Forum">
-                                </div>
+                                    <input type="submit" class="submit" value="Entrar">
+                                </div> <br>
+                                <a href="./usuarios/cadastrar_usuario.php">Cadastro</a>
                             </div>
                         </div>
                     </div>

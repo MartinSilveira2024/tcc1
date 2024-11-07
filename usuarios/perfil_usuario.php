@@ -5,13 +5,6 @@ if (isset($_SESSION['id_usuario']) == false) {
   die;
  }
 include "../conecta.php";
-$sql = "SELECT * FROM usuarios";
-$result = mysqli_query($connect, $sql);
-if ($result) {
-    $infos = mysqli_fetch_all($result, MYSQLI_ASSOC);
-} else {
-    echo "erro ao conectar no bd";
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,10 +28,8 @@ if ($result) {
                             <div class="col-md-4 gradient-custom text-center text-white"
                                 style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
                                 <img src="jhin.jpg"
-                                    alt="Avatar" class="img-fluid my-5" style="width: 120px; border-radius: 10px" />
-                                <h5> <?php foreach ($infos as $info) {
-                                            echo $info['nome_user'] . "<br><br>";
-                                        } ?> </h5>
+                                    alt="Avatar" class="img-fluid my-5" style="width: 175px; border-radius: 10px" />
+                                  <a href="">Trocar foto de perfil</a> 
                                 <i class="far fa-edit mb-5"></i>
                             </div>
                             <div class="col-md-8">
@@ -48,11 +39,11 @@ if ($result) {
                                     <div class="row pt-1">
                                         <div class="col-6 mb-3">
                                             <h6>Email</h6>
-                                            <p class="text-muted">Martin</p>
+                                            <p class="text-muted"><?php echo $_SESSION['email_user']; ?></p>
                                         </div>
                                         <div class="col-6 mb-3">
-                                            <h6>Phone</h6>
-                                            <p class="text-muted">123 456 789</p>
+                                            <h6>Nome de usuário</s></h6>
+                                            <p class="text-muted"><?php echo $_SESSION['nome']; ?></p>
                                         </div>
                                     </div>
                                     <hr class="mt-0 mb-4">

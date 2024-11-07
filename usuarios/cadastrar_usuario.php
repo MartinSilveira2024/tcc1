@@ -36,17 +36,18 @@
                             <div class="input-field">
 
                             <div class="input-field">
-                                <input type="text" class="input" name="senha" required> <br>
+                                <input type="password" class="input" name="senha" required> <br>
                                 <label for="pass">Senha</label>
                             </div>
                             <div class="input-field">
-                                <input type="text" class="input" name="rep_senha" required> <br>
+                                <input type="password" class="input" name="rep_senha" required> <br>
                                 <label for="pass">Confirmar senha</label>
                             </div>
                             <div class="input-field">
 
-                                    <input type="submit" class="submit" value="Criar Forum">
-                                </div>
+                                    <input type="submit" class="submit" value="Cadastra-se">
+                                </div> <br>
+                                <a href="../index.php">Login</a>
                             </div>
                         </div>
                     </div>
