@@ -2,7 +2,6 @@
 session_start();
 $id_user = $_SESSION['id_usuario'];
 $pastaDestino = "../jogo/uploads/";
-
 // verificar se o tamanho do arquivo é maior que 2 MB
 if ($_FILES['arquivo']['size'] > 2000000) {  // condição de guarda 👮
     echo "O tamanho do arquivo é maior que o limite permitido. Limite máximo: 2 MB.";
@@ -35,8 +34,7 @@ $fezUpload = move_uploaded_file($_FILES['arquivo']['tmp_name'], realpath(__DIR__
 
 if ($fezUpload == true) {
     $conexao = mysqli_connect("localhost", "root", "", "tcc");
-    $sql =  "UPDATE usuarios SET foto_user='" . $_POST['arquivo'] . "' WHERE id_usuario = $id_user";
-    var_dump($sql); die;
+    $sql =  "UPDATE usuarios SET foto_user='" . $_FILES['arquivo']['name'] . "' WHERE id_usuario = $id_user";
     $resultado = mysqli_query($conexao, $sql);
     if ($resultado != false) {
         header("Location: perfil_usuario.php");
