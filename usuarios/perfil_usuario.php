@@ -35,8 +35,8 @@ if ($result) {
                         <div class="row g-0">
                             <div class="col-md-4 gradient-custom text-center text-white"
                                 style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                                <img src="jhin.jpg"
-                                    alt="Avatar" class="img-fluid my-5" style="width: 175px; border-radius: 10px" />
+                                <img src="../jogo/uploads/<?php echo $infos['foto_user']; ?>"
+                                    alt="Avatar" class="img-fluid my-5" style="width: 170px; border-radius: 100px" />
                                   <a href="">Trocar foto de perfil</a> 
                                 <i class="far fa-edit mb-5"></i>
                             </div>
