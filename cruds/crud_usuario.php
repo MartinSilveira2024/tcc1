@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$id_jogo = $_GET['id_jogo'];
+
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@ $id_jogo = $_GET['id_jogo'];
     <?php
     include "../conecta.php";
     include_once "../jogo/navbar.php";
-    $sql = "SELECT * FROM forum WHERE id_jogo = $id_jogo";
+    $sql = "SELECT * FROM usuarios";
     $result = mysqli_query($connect, $sql);
     if ($result) {
         $infos = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -48,7 +48,7 @@ foreach ($infos as $info) {
     echo '<tr>';
     echo '<td>' . $info['titulo'] . '</td>';
     echo '<td>' . $info['subtitulo'] . '</td>';
-    echo '<td> <a href="pag_forum.php?id_forum=' . $info["id_forum"] . '"> Entrar </a> </td>';
+    echo '<td> <a href="pag_forum.php?id_forum=' . $info["id_forum"] . '"> Excluir </a> </td>';
     echo '</tr>';
 }
 
