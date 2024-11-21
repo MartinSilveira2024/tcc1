@@ -2,6 +2,10 @@
 
 session_start();
 
+if (isset($_SESSION['nivel_acesso']) != 'adm') {
+    echo"você não é administrador";
+    die;
+   }
 ?>
 
 <!DOCTYPE html>
@@ -32,13 +36,14 @@ session_start();
     ?> 
 <br>
     <div class="container">
-    <caption>Listagem de foruns</caption>
+    <caption>Listagem de jogos</caption>
  <table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">Nome</th>
       <th scope="col">Empresa</th>
-      <th scope="col">Opções</th>
+      <th scope="col">Excluir</th>
+      <th scope="col">Alterar</th>
     </tr>
   </thead>
   <tbody>
@@ -49,6 +54,7 @@ foreach ($infos as $info) {
     echo '<td>' . $info['nome_jogo'] . '</td>';
     echo '<td>' . $info['empresa_jogo'] . '</td>';
     echo '<td> <a href="../jogo/excluir_jogo.php?id_jogo=' . $info["id_jogo"] . '"> Excluir </a> </td>';
+    echo '<td> <a href="../jogo/excluir_jogo.php?id_jogo=' . $info["id_jogo"] . '"> Editar </a> </td>';
     echo '</tr>';
 }
 

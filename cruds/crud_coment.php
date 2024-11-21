@@ -1,6 +1,10 @@
 <?php
 
 session_start();
+if (isset($_SESSION['nivel_acesso']) != 'adm') {
+    echo"você não é administrador";
+    die;
+   }
 ?>
 
 <!DOCTYPE html>

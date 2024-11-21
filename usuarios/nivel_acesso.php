@@ -11,7 +11,7 @@ $nome = $usuario['nome_user'];
 $id = $usuario['id_usuario'];
 $email = $usuario['email_user'];
 $foto_user = $usuario['foto_user'];
-$tipo_usuario = $_SESSION['nivel_acesso'];
+$tipo_usuario = $usuario['nivel_acesso'];
 if ($usuario != null) {
     if ($usuario['senha_user'] == $senha) {
         session_start();
