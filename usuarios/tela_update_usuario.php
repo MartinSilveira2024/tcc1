@@ -25,7 +25,9 @@ if ($result) {
 </head>
 
 <body>
-<img src="logo.png" class="login__logo">
+
+<?php require_once "../jogo/navbar.php"?>
+
 
     <form action="update_usuario.php" method="post">
         <div class="wrapper">

@@ -34,7 +34,7 @@ $fezUpload = move_uploaded_file($_FILES['arquivo']['tmp_name'], realpath(__DIR__
 
 if ($fezUpload == true) {
     $conexao = mysqli_connect("localhost", "root", "", "tcc");
-    $sql =  "UPDATE usuarios SET foto_user='" . $_FILES['arquivo']['name'] . "' WHERE id_usuario = $id_user";
+    $sql =  "UPDATE usuarios SET foto_user='$nomeArquivo' WHERE id_usuario = $id_user";
     $resultado = mysqli_query($conexao, $sql);
     if ($resultado != false) {
         header("Location: perfil_usuario.php");

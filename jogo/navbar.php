@@ -9,7 +9,7 @@
         <a class="nav-link" href="../usuarios/perfil_usuario.php">Ver perfil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../usuarios/desconect_usuario.php">Ver jogos</a>
+        <a class="nav-link" href="../jogo/teste_cards.php">Ver jogos</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="../index.php">Entrar</a>
