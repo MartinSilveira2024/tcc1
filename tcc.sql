@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 24-Out-2024 às 19:52
+-- Tempo de geração: 28-Nov-2024 às 18:38
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `comentarios` (
   `id_forum` int NOT NULL,
   `coment` varchar(255) NOT NULL,
   PRIMARY KEY (`id_comentario`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `forum` (
   PRIMARY KEY (`id_forum`),
   KEY `fk_usuarios` (`id_usuario`),
   KEY `fk_jogo_forum` (`id_jogo`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -89,19 +89,11 @@ CREATE TABLE IF NOT EXISTS `jogos` (
   `id_jogo` int NOT NULL AUTO_INCREMENT,
   `nome_jogo` varchar(255) NOT NULL,
   `empresa_jogo` varchar(255) NOT NULL,
-  `quant_forum_jogo` int DEFAULT NULL,
   `id_categoria` int NOT NULL,
   `foto_jogo` varchar(255) NOT NULL,
   PRIMARY KEY (`id_jogo`),
   KEY `fk_categoria` (`id_categoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Extraindo dados da tabela `jogos`
---
-
-INSERT INTO `jogos` (`id_jogo`, `nome_jogo`, `empresa_jogo`, `quant_forum_jogo`, `id_categoria`, `foto_jogo`) VALUES
-(29, 'League of Legends', 'Riot Games', NULL, 2, '66fff26b4aef1.jpg');
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -113,19 +105,20 @@ DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id_usuario` int NOT NULL AUTO_INCREMENT,
   `nome_user` varchar(255) NOT NULL,
+  `foto_user` varchar(255) NOT NULL,
   `email_user` varchar(255) NOT NULL,
   `senha_user` varchar(255) NOT NULL,
   `nivel_acesso` varchar(3) NOT NULL,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `email_user` (`email_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=133 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `nome_user`, `email_user`, `senha_user`, `nivel_acesso`) VALUES
-(119, 'Thiago Krug', 'ThiagoKrug@gmail.com', '123', 'usr');
+INSERT INTO `usuarios` (`id_usuario`, `nome_user`, `foto_user`, `email_user`, `senha_user`, `nivel_acesso`) VALUES
+(132, 'Martin', 'user_padrao.png', 'Martin@gmail.com', '123', 'adm');
 
 --
 -- Restrições para despejos de tabelas
