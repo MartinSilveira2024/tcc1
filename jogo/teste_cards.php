@@ -4,15 +4,7 @@ include "../conecta.php";
 if (isset($_SESSION['id_usuario']) == false) {
   echo"realize o login";
   die;
- }
-$sql = "SELECT * FROM jogos";
-$result = mysqli_query($connect, $sql);
-if ($result) {
-  $infos = mysqli_fetch_all($result, MYSQLI_ASSOC);
-} else {
-  echo "erro ao conectar no bd";
-}
-?>
+ } ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,41 +14,90 @@ if ($result) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="css.css">
+  <style>
+  
+  #mainSlider .carousel-caption h2{
+    font-size: 28px;
+}
 
+#mainSlider .carousel-caption p{
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.carousel-caption{
+    left: 10%;
+    right: 10%;
+}
+
+</style>
   <title>Jogos</title>
 </head>
 
 <body>
 
 <?php include_once "navbar.php"; ?>
+ <main style="margin-top: 5%;" class="container ">
 
-  <?php
-  include "../conecta.php";
-  $sql = "SELECT * FROM jogos";
-  $result = mysqli_query($connect, $sql);
 
-  ?>
-  <?php
+        <div id="mainSlider" class="carousel slide" data-bs-ride="carousel">
 
-  while ($info = mysqli_fetch_assoc($result)) {
-    $arq = $info['foto_jogo'];
-    echo "<div class='container'>";
-    echo "<div class='container_card'>";
-    echo  "<article class='article_card'>";
-    echo "<img src='uploads/$arq' width='100px' height='100px' class='card_img'>";
-    echo   "<div class='card_data'>";
-    echo   "<span class='card_title'>" . $info['nome_jogo'] . "</span>";
-    echo   "<h2 class='description_card'>" . $info['empresa_jogo'] . "</h2>";
-    echo   '<a href="../forum/listar_foruns.php?id_jogo=' . $info["id_jogo"] . '"> Entrar </a>';
-    echo   '<a href="excluir_jogo.php?id_jogo=' . $info["id_jogo"] . '"> Excluir Jogo </a>';
-    echo   "</div>";
-    echo   "</article>";
-  }
+            <ol class="carousel-indicators">
+                <button type="button" data-bs-target="#mainSlider" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#mainSlider" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#mainSlider" data-bs-slide-to="2"></button>
+            </ol>
 
-  ?>
+            <div class="carousel-inner w-100 center-block">
+                <div class="carousel-item active">
+
+                    <!--banner1-->
+                    <img src="shaco.jpg" class=" w-100" alt="fotos da igreja">
+                    <div class="carousel-caption d-md-block">
+                        <h2>Conheça-nos: Benjamin Constant 1991</h2>
+                        <p></p>
+                        <a href="#" class="main-btn">Ver mais</a>
+                    </div>
+                </div>
+
+
+                <!--banner2-->
+                <div class="carousel-item  ">
+                    <img src="fizz.jpg" class="w-100" alt="fotos da igreja">
+                    <div class="carousel-caption  d-md-block">
+                        <h2>conheça-nos</h2>
+                        <p></p>
+                        <a href="#" class="main-btn">ver mais</a>
+                    </div>
+                </div>
+
+
+                <!--banner3-->
+                <div class="carousel-item  ">
+                    <img src="gangplank.png" class=" w-100" alt="Manutenção de Software">
+                    <div class="carousel-caption  d-md-block">
+                        <h2>conheça-nos</h2>
+                        <p></p>
+                        <a href="#" class="main-btn">Fale conosco</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <a href="#mainSlider" class="carousel-control-prev" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a href="#mainSlider" class="carousel-control-next" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+        </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 
 </html>
+
+
