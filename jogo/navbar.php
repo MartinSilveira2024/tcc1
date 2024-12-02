@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <img src="../logo.png" alt="logo" width="90px">
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,9 +12,15 @@
       <li class="nav-item">
         <a class="nav-link" href="../jogo/ver_jogos.php">Ver jogos</a>
       </li>
+      <?php 
+      if($_SESSION['email_user']) 
+      {?>
+    <?php }else{
+      ?>
       <li class="nav-item">
         <a class="nav-link" href="../index.php">Entrar</a>
-      </li>
+      </li> 
+    <?php } ?>
     </ul>
   </div>
   <form class="form-inline">

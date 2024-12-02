@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 $id_forum = $_GET['id_forum'];
@@ -17,36 +17,34 @@ $id_forum = $_GET['id_forum'];
 </head>
 
 <body>
-
-        <form action="../forum/pag_forum.php" method="GET">
-        <div class="wrapper">
-            <div class="container main">
-                <div class="row">
-                    <div class="col-md-6 side-image">
+    <div class="wrapper">
+        <div class="container main">
+            <div class="row">
+                <div class="col-md-6 side-image">
 
                     <form action="cad_coment.php" method="GET">
 
 
 
-                    </div>
-                    <div class="col-md-6 right">
+                </div>
+                <div class="col-md-6 right">
 
-                        <div class="input-box">
+                    <div class="input-box">
 
-                            <header>Comentar</header>
+                        <header>Comentar</header>
 
-                            <div class="input-field">
+                        <div class="input-field">
                             Comentario:<Textarea type="text" name="coment"> </Textarea> <br><br>
-                            </div>
-                            <input type="hidden" name="id_forum" value="<?php print $id_forum; ?>">
-
-                                    <input type="submit" class="submit" value="Criar Forum">
-                                </div>
-                            </div>
                         </div>
+                        <input type="hidden" name="id_forum" value="<?php print $id_forum; ?>">
+
+                        <input type="submit" class="submit" value="Criar Forum">
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    </div>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

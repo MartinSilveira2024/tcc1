@@ -54,9 +54,9 @@ if (isset($_SESSION['id_usuario']) == false) {
                     <!--banner1-->
                     <img src="shaco.jpg" class=" w-100" alt="fotos da igreja">
                     <div class="carousel-caption d-md-block">
-                        <h2>Conheça-nos: Benjamin Constant 1991</h2>
+                        <h2>Por que usar o Supreme Forum Games?</h2>
                         <p></p>
-                        <a href="#" class="main-btn">Ver mais</a>
+                        <p>Rápido, prático e simples</p>
                     </div>
                 </div>
 
@@ -65,9 +65,9 @@ if (isset($_SESSION['id_usuario']) == false) {
                 <div class="carousel-item  ">
                     <img src="fizz.jpg" class="w-100" alt="fotos da igreja">
                     <div class="carousel-caption  d-md-block">
-                        <h2>conheça-nos</h2>
+                        <h2>Usabilidade excelente</h2>
                         <p></p>
-                        <a href="#" class="main-btn">ver mais</a>
+                        <p>Fácil usar e aprender</p>
                     </div>
                 </div>
 
@@ -76,9 +76,9 @@ if (isset($_SESSION['id_usuario']) == false) {
                 <div class="carousel-item  ">
                     <img src="gangplank.png" class=" w-100" alt="Manutenção de Software">
                     <div class="carousel-caption  d-md-block">
-                        <h2>conheça-nos</h2>
+                        <h2>Ache e crie foruns dos jogos que quiser</h2>
                         <p></p>
-                        <a href="#" class="main-btn">Fale conosco</a>
+                        <p>Se cadastre e crie foruns personalizados</p>
                     </div>
                 </div>
             </div>

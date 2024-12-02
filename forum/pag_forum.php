@@ -31,9 +31,9 @@ $id_forum = $_GET['id_forum'];
     <?php
 
     foreach ($infos as $info) {
-        echo $info['titulo'] . "<br><br>";
-        echo $info['subtitulo'] . "<br><br>";
-        echo $info['corpo_texto'] . " <br><br>";
+        echo 'Titulo: ' . $info['titulo'] . "<br><br>";
+        echo 'Subtitulo: ' . $info['subtitulo'] . "<br><br>";
+        echo 'Texto: ' . $info['corpo_texto'] . " <br><br>";
     }
 
 
