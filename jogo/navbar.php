@@ -12,6 +12,15 @@
       <li class="nav-item">
         <a class="nav-link" href="../jogo/ver_jogos.php">Ver jogos</a>
       </li>
+      <?php if(($_SESSION['nivel_acesso']) == 'adm')
+      {
+     echo '<li class="nav-item">
+        <a class="nav-link" href="../cruds">Ver cruds</a>
+      </li>'; }
+      ?>
+      <li class="nav-item">
+        <a class="nav-link" href="../usuarios/desconect_usuario.php">Sair</a>
+      </li>
       <?php 
       if($_SESSION['email_user']) 
       {?>
