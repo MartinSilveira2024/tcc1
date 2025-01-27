@@ -25,7 +25,7 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
     include "../conecta.php";
     include_once "../jogo/navbar.php";
     $sql = "SELECT * FROM usuarios";
-    $result = mysqli_query($connect, $sql);
+    $result = mysqli_query($conexao, $sql);
     if ($result) {
         $infos = mysqli_fetch_all($result, MYSQLI_ASSOC);
     } else {

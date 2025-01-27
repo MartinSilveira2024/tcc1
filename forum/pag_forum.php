@@ -20,7 +20,7 @@ $id_forum = $_GET['id_forum'];
     <?php
     include "../conecta.php";
     $sql = "SELECT * FROM forum WHERE id_forum = $id_forum";
-    $result = mysqli_query($connect, $sql);
+    $result = mysqli_query($conexao, $sql);
     if ($result) {
         $infos = mysqli_fetch_all($result, MYSQLI_ASSOC);
     } else {
@@ -48,7 +48,7 @@ $id_forum = $_GET['id_forum'];
 
 
     $sql = "SELECT * FROM comentarios WHERE id_forum = $id_forum";
-    $result = mysqli_query($connect, $sql);
+    $result = mysqli_query($conexao, $sql);
     if ($result) {
         $infos = mysqli_fetch_all($result, MYSQLI_ASSOC);
     } else {

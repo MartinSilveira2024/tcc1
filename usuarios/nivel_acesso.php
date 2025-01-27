@@ -5,7 +5,7 @@ $email = $_POST["email"];
 $senha = $_POST["senha"];
 
 $seleciona_email = "SELECT * FROM usuarios WHERE email_user = '$email' AND senha_user = '$senha'";
-$resultado = mysqli_query($connect, $seleciona_email);
+$resultado = mysqli_query($conexao, $seleciona_email);
 $usuario = mysqli_fetch_assoc($resultado);
 $nome = $usuario['nome_user'];
 $id = $usuario['id_usuario'];

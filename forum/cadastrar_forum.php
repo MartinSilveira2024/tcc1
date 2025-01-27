@@ -6,12 +6,12 @@ $corpo_texto = $_POST['corpo_texto'];
 $id_jogo = $_POST['id_jogo'];
 $id_usuario = $_SESSION['id_usuario'];
 
-$conexao = mysqli_connect("localhost", "root", "", "tcc");
+require_once "../conecta.php";
 
 
 $sql = "INSERT INTO forum(id_usuario,id_jogo, titulo, subtitulo, corpo_texto) VALUES ('$id_usuario',$id_jogo,'$titulo', '$subtitulo', '$corpo_texto')";
 $query_cadastros = mysqli_query($conexao,$sql);
-
+echo $sql;
 if ($query_cadastros)
 
 {
@@ -21,4 +21,5 @@ if ($query_cadastros)
 
 else {
 	echo "deu erro";
+	echo mysqli_error($conexao);
 }

@@ -7,7 +7,7 @@ if (isset($_SESSION['id_usuario']) == false) {
  $id_usuario = $_SESSION['id_usuario'];
  include "../conecta.php";
  $sql = "SELECT * FROM usuarios WHERE id_usuario = $id_usuario";
-$result = mysqli_query($connect, $sql);
+$result = mysqli_query($conexao, $sql);
 if ($result) {
   $infos = mysqli_fetch_assoc($result);
 } else {

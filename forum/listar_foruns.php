@@ -22,7 +22,7 @@ $id_jogo = $_GET['id_jogo'];
     include "../conecta.php";
     include_once "../jogo/navbar.php";
     $sql = "SELECT * FROM forum WHERE id_jogo = $id_jogo";
-    $result = mysqli_query($connect, $sql);
+    $result = mysqli_query($conexao, $sql);
     if ($result) {
         $infos = mysqli_fetch_all($result, MYSQLI_ASSOC);
     } else {

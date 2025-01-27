@@ -1,13 +1,13 @@
 <?php
 session_start();
-require_once "conecta.php";
+require_once "../conecta.php";
 $id = $_SESSION['id_usuario'];
 $sql = "SELECT * FROM usuarios WHERE id_usuario = '$id'";
-$result = mysqli_query($connect, $sql);
+$result = mysqli_query($conexao, $sql);
 if ($result) {
     $usuario = mysqli_fetch_assoc($result);
 } else {
-    echo mysqli_errno($connect) . ": " . mysqli_error($connect);
+    echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);
     die();
 }
 

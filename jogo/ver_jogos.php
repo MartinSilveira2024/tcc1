@@ -6,7 +6,7 @@ if (isset($_SESSION['id_usuario']) == false) {
   die;
  }
 $sql = "SELECT * FROM jogos";
-$result = mysqli_query($connect, $sql);
+$result = mysqli_query($conexao, $sql);
 if ($result) {
   $infos = mysqli_fetch_all($result, MYSQLI_ASSOC);
 } else {
@@ -33,7 +33,7 @@ if ($result) {
   <?php
   include "../conecta.php";
   $sql = "SELECT * FROM jogos";
-  $result = mysqli_query($connect, $sql);
+  $result = mysqli_query($conexao, $sql);
 
   ?>
   <?php

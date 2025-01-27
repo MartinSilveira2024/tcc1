@@ -33,7 +33,7 @@ $nomeArquivo = uniqid();
 $fezUpload = move_uploaded_file($_FILES['arquivo']['tmp_name'], realpath(__DIR__ . '/' . $pastaDestino) . '/' . $nomeArquivo . "." . $extensao);
 
 if ($fezUpload == true) {
-    $conexao = mysqli_connect("localhost", "root", "", "tcc");
+    require_once "../conecta.php";
     $sql =  "UPDATE usuarios SET foto_user='$nomeArquivo' WHERE id_usuario = $id_user";
     $resultado = mysqli_query($conexao, $sql);
     if ($resultado != false) {
