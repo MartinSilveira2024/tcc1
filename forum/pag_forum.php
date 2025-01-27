@@ -47,7 +47,7 @@ $id_forum = $_GET['id_forum'];
     echo "<br>";
 
 
-    $sql = "SELECT * FROM comentarios WHERE id_forum = $id_forum";
+    $sql = "SELECT * FROM comentarios INNER JOIN usuarios ON usuarios.id_usuario = comentarios.id_usuario WHERE id_forum = $id_forum";
     $result = mysqli_query($conexao, $sql);
     if ($result) {
         $infos = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -56,7 +56,8 @@ $id_forum = $_GET['id_forum'];
     }
 
     foreach ($infos as $info) {
-        echo $info['coment'] . "<br><br>";
+        $data = DateTime::createFromFormat('Y-m-d H:i:s', $info['data_comment'])->format('d/m/Y H:i:s');
+        echo "<img src='../jogo/uploads/".$info['foto_user']."'>" . $info['coment'] . $data . "<br><br>";
     }
     ?>
 </body>

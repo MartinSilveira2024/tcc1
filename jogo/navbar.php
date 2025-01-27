@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <img src="../logo.png" alt="logo" width="90px">
+  <a href="<?= $_SERVER['SERVER_NAME'] . "teste_cards.php"; ?>"><img src="../logo.png" alt="logo" width="90px"></a>
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -32,8 +32,8 @@
     <?php } ?>
     </ul>
   </div>
-  <form class="form-inline">
+  <!-- <form class="form-inline">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
+  </form> -->
 </nav>
