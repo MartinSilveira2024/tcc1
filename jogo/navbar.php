@@ -1,6 +1,6 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a href="<?= $_SERVER['SERVER_NAME'] . "teste_cards.php"; ?>"><img src="../logo.png" alt="logo" width="90px"></a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 40px;">
+  <a href="<?= $_SERVER['SERVER_NAME'] . "teste_cards.php" ?>"><img src="../logo.png" alt="logo" width="90px"></a>
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

@@ -4,10 +4,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require_once "conexao.php";
+require_once "../conecta.php";
 
 $email = $_POST['email'];
-$sql = "SELECT * FROM usuario WHERE email='$email'";
+$sql = "SELECT * FROM usuarios WHERE email_user='$email'";
 $resultado = mysqli_query($conexao, $sql);
 
 $usuario = mysqli_fetch_assoc($resultado);
@@ -19,9 +19,9 @@ if ($usuario == null) {
 //gerar um token unico
 $token = bin2hex(random_bytes(50));
 
-require_once 'PHPMailer/src/PHPMailer.php';
-require_once 'PHPMailer/src/SMTP.php';
-require_once 'PHPMailer/src/Exception.php';
+require_once '../PHPMailer/src/PHPMailer.php';
+require_once '../PHPMailer/src/SMTP.php';
+require_once '../PHPMailer/src/Exception.php';
 include 'config.php';
 
 
@@ -53,7 +53,7 @@ try {
 
     //Recipients
     $mail->setFrom($config['email'], 'Aula de Tópicos');
-    $mail->addAddress($usuario['email'], $usuario['nome']);     //Add a recipient
+    $mail->addAddress($usuario['email_user'], $usuario['nome_user']);     //Add a recipient
     $mail->addReplyTo($config['email'], 'Aula de Tópicos');
 
     //Content
@@ -62,8 +62,8 @@ try {
     $mail->Body = 'Olá!<br>
         Você solicitou a recuperação da sua conta no nosso sistema.
         Para isso, clique no link abaixo para realizar a troca de senha:<br>
-        <a href="' . $_SERVER['SERVER_NAME'] . '/recuperar-senha/nova-senha.php?email='
-        . $usuario['email'] . '&token=' . $token .
+        <a href="' . $_SERVER['SERVER_NAME'] . '/tcc1/usuarios/nova-senha.php?email='
+        . $usuario['email_user'] . '&token=' . $token .
         '">Clique aqui para recuperar o acesso à sua conta!</a><br>
         <br>
         Atenciosamente<br>
@@ -79,7 +79,7 @@ try {
 
     $sql2 = "INSERT INTO `recuperar-senha` 
              (email, token, data_criacao, usado)
-             VALUES ('" . $usuario['email'] . "', '$token', 
+             VALUES ('" . $usuario['email_user'] . "', '$token', 
              '$agora', 0)";
 
     mysqli_query($conexao, $sql2);

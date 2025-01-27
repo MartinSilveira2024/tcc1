@@ -5,7 +5,7 @@
 $email = $_GET['email'];
 $token = $_GET['token'];
 
-require_once "conexao.php";
+require_once "../conecta.php";
 $sql = "SELECT * FROM `recuperar-senha` WHERE email='$email' AND 
         token='$token'";
 $resultado = mysqli_query($conexao, $sql);

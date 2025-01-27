@@ -10,8 +10,7 @@
 </head>
 
 <body>
-<img src="logo.png" class="login__logo">
-
+<!-- <img src="logo.png" class="login__logo"> -->
     <form action="./usuarios/nivel_acesso.php" method="post">
         <div class="wrapper">
             <div class="container main">
@@ -37,7 +36,8 @@
 
                                     <input type="submit" class="submit" value="Entrar">
                                 </div> <br>
-                                <a href="./usuarios/cadastrar_usuario.php">Cadastro</a>
+                                <a href="./usuarios/cadastrar_usuario.php">Cadastro</a> <br> <br>
+                                <a href="./usuarios/form-recuperar-senha.php">Recuperar senha</a>
                             </div>
                         </div>
                     </div>

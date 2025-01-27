@@ -5,6 +5,6 @@ $config = [
     'user' => '',
     'pass' => '',
     'db'   => '',
-    'email' => 'martin.2022311000@aluno.iffar.edu.br',
+    'email' => '',
     'senha_email' => ''
 ];

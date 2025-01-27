@@ -4,7 +4,7 @@ $token = $_POST['token'];
 $senha = $_POST['senha'];
 $repetirSenha = $_POST['repetirSenha'];
 
-require_once "conexao.php";
+require_once "../conecta.php";
 $sql = "SELECT * FROM `recuperar-senha` WHERE email='$email' AND 
         token='$token'";
 $resultado = mysqli_query($conexao, $sql);
@@ -46,8 +46,8 @@ if ($recuperar == null) {
         die();
     }
 
-    $sql2 = "UPDATE usuario SET senha='$senha' WHERE 
-             email='$email'";
+    $sql2 = "UPDATE usuarios SET senha_user='$senha' WHERE 
+             email_user='$email'";
     mysqli_query($conexao, $sql2);
     $sql3 = "UPDATE `recuperar-senha` SET usado=1 WHERE 
              email='$email' AND token='$token'";
@@ -55,5 +55,5 @@ if ($recuperar == null) {
 
     echo "Nova senha cadastrada com sucesso! Faça o login para 
           acessar o sistema.<br>";
-    echo "<a href='index.php'>Acessar sistema</a>";
+    echo "<a href='../index.php'>Acessar sistema</a>";
 }
