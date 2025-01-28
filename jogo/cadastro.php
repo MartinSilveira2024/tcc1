@@ -47,5 +47,5 @@ if ($resultado != false) {
             }
         }
     }
-    header("Location: teste_cards.php");
+    header("Location: ver_jogos.php");
 }
