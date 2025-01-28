@@ -54,8 +54,11 @@ if ($result) {
       <?php } ?>
     </div>
 
-    <?php if (isset($_SESSION['nivel_acesso']) == 'adm') {
-      echo '<a href="cadastrar.php">Cadastrar jogos</a>'; }?>
+    <?php
+if (isset($_SESSION['nivel_acesso']) && $_SESSION['nivel_acesso'] == 'adm') {
+    echo '<a href="cadastrar.php">Cadastrar jogos</a>';
+}
+?>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

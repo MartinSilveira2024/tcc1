@@ -18,6 +18,12 @@ head("Cadastro de fórum");
 ?>
 
 <body>
+
+<style>
+        .form-control {
+            border: 0.5px solid black;
+        }
+    </style>
     <?php include_once "../jogo/navbar.php"; ?>
 
     <div class="container">
