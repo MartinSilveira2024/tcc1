@@ -1,9 +1,20 @@
 <?php
 
 session_start();
-$id_forum = $_GET['id_forum'];
-
 include "../conecta.php";
+
+
+$id_forum = $_GET['id_forum'];
+$id = $_SESSION['id_usuario'];
+$sql2 = "SELECT * FROM usuarios WHERE id_usuario = $id";
+$result = mysqli_query($conexao, $sql2);
+if ($result) {
+    $infor = mysqli_fetch_assoc($result);
+} else {
+    echo "erro ao conectar no bd";
+}
+// var_dump($_SESSION['id_usuario']);
+// var_dump($id); die;
 include_once "../jogo/navbar.php";
 $sql = "SELECT * FROM forum WHERE id_forum = $id_forum";
 $result = mysqli_query($conexao, $sql);
@@ -12,6 +23,8 @@ if ($result) {
 } else {
     echo "erro ao conectar no bd";
 }
+
+
 
 include_once "../head.php";
 head("Fórum do Jogo " . $info['titulo']);
@@ -28,7 +41,7 @@ head("Fórum do Jogo " . $info['titulo']);
             echo $info['corpo_texto'] . " <br><br>";
 
             echo "<hr>";
-            echo '<a href="../coment/cadastrar_coment.php?id_forum=' . $info["id_forum"] . '">Comentar sobre o forum</a>';
+            echo '<a href="../coment/cadastrar_coment.php?id_forum=' . $info["id_forum"] . '">Comentar sobre o forum</a> <br>';
 
             ?>
             <br>
@@ -57,6 +70,11 @@ head("Fórum do Jogo " . $info['titulo']);
                 <div class="col-9">
                     <?= $info['coment'] ?>
                 </div>
+
+                <?php if ($_SESSION['id_usuario'] == $info['id_usuario']) { ?>
+                    <a href="../coment/alterar.php?id_comentario=<?= $info['id_comentario'] ?>">Editar</a>
+                <?php } ?>
+
             </div>
         <?php } ?>
     </div>

@@ -42,7 +42,8 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
     <tr>
       <th scope="col">Titulo</th>
       <th scope="col">Subtitulo</th>
-      <th scope="col">Opções</th>
+      <th scope="col">Excluir</th>
+      <th scope="col">Alterar</th>
     </tr>
   </thead>
   <tbody>
@@ -53,6 +54,7 @@ foreach ($infos as $info) {
     echo '<td>' . $info['titulo'] . '</td>';
     echo '<td>' . $info['subtitulo'] . '</td>';
     echo '<td> <a href="../forum/excluir_forum.php?id_forum=' . $info["id_forum"] . '"> Excluir </a> </td>';
+    echo '<td> <a href="../forum/alterar.php?id_forum=' . $info["id_forum"] . '"> Alterar </a> </td>';
     echo '</tr>';
 }
 

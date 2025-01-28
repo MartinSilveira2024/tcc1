@@ -54,7 +54,7 @@ foreach ($infos as $info) {
     echo '<td>' . $info['nome_jogo'] . '</td>';
     echo '<td>' . $info['empresa_jogo'] . '</td>';
     echo '<td> <a href="../jogo/excluir_jogo.php?id_jogo=' . $info["id_jogo"] . '"> Excluir </a> </td>';
-    echo '<td> <a href="../jogo/excluir_jogo.php?id_jogo=' . $info["id_jogo"] . '"> Editar </a> </td>';
+    echo '<td> <a href="../jogo/alterar.php?id_jogo=' . $info["id_jogo"] . '"> Editar </a> </td>';
     echo '</tr>';
 }
 

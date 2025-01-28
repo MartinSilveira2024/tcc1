@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 27-Jan-2025 às 20:08
+-- Tempo de geração: 28-Jan-2025 às 19:24
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -59,23 +59,19 @@ CREATE TABLE IF NOT EXISTS `comentarios` (
   `coment` varchar(255) NOT NULL,
   `data_comment` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_comentario`),
-  KEY `fk_usuario` (`id_usuario`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `fk_usuario` (`id_usuario`),
+  KEY `fk_forum` (`id_forum`)
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `comentarios`
 --
 
 INSERT INTO `comentarios` (`id_comentario`, `id_forum`, `id_usuario`, `coment`, `data_comment`) VALUES
-(13, 47, 133, ' dsadsa', '2025-01-27 10:42:14'),
-(14, 47, 133, ' sadsadsa', '2025-01-27 10:42:14'),
-(15, 49, 133, ' dsadsadsa', '2025-01-27 10:42:14'),
-(16, 50, 133, ' dsadsadsa', '2025-01-27 10:42:14'),
-(17, 51, 133, ' dsadsadsa', '2025-01-27 10:42:14'),
-(18, 47, 133, ' dsa', '2025-01-27 12:43:37'),
-(26, 47, 134, ' ggg', '2025-01-27 17:01:37'),
-(25, 47, 134, ' fasdfasdfsadf', '2025-01-27 16:58:05'),
-(24, 47, 133, ' dsa', '2025-01-27 15:28:17');
+(38, 55, 133, ' Tedy', '2025-01-28 13:58:11'),
+(39, 54, 135, ' Verlei', '2025-01-28 14:56:19'),
+(40, 54, 135, ' Verlei', '2025-01-28 15:51:18'),
+(41, 54, 133, ' dsadssads', '2025-01-28 16:12:19');
 
 -- --------------------------------------------------------
 
@@ -94,18 +90,15 @@ CREATE TABLE IF NOT EXISTS `forum` (
   PRIMARY KEY (`id_forum`),
   KEY `fk_usuarios` (`id_usuario`),
   KEY `fk_jogo_forum` (`id_jogo`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `forum`
 --
 
 INSERT INTO `forum` (`id_forum`, `id_jogo`, `id_usuario`, `titulo`, `subtitulo`, `corpo_texto`) VALUES
-(47, 33, 133, 'dsa', 'dsa', ' dsa'),
-(48, 33, 133, 'dsadsa', 'dasds', ' sdadsa'),
-(49, 34, 133, 'dsadsa', 'dsadsa', ' dsadsa'),
-(50, 35, 133, 'dsad', 'sadsad', ' sadsa'),
-(51, 36, 133, 'dsadsa', 'dsadsadsa', ' dsadsa');
+(54, 33, 135, 'Verlei', 'Tedy', '  Moreira'),
+(55, 33, 133, 'dsadsa', 'dsadsa', 'dsadsa');
 
 -- --------------------------------------------------------
 
@@ -129,8 +122,7 @@ CREATE TABLE IF NOT EXISTS `jogos` (
 --
 
 INSERT INTO `jogos` (`id_jogo`, `nome_jogo`, `empresa_jogo`, `id_categoria`, `foto_jogo`) VALUES
-(33, 'dsa', 'dsa', 2, '679784b502525.jpg'),
-(34, 'dsadsa', 'dsadsa', 2, '67978b9249616.png'),
+(33, 'Thiago', 'Krug', 2, '679784b502525.jpg'),
 (35, 'dsadsa', 'dsadsa', 1, '67978b9cdade9.jpg'),
 (36, 'dsads', 'dsadsa', 1, '67978ba80e5c0.jpg');
 
@@ -178,14 +170,18 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nome_user`, `foto_user`, `email_user`, `senha_user`, `nivel_acesso`) VALUES
-(133, 'Martin1', '6797a6f3b4c54.jpg', 'Martin@gmail.com1', '1231', 'adm'),
-(134, 'Thiago Krug', '6797e67e41e75.jpg', 'thiago.krug@iffarroupilha.edu.br', '123', 'usr'),
-(135, 'Martin', 'user_padrao.png', 'martin.2022311000@aluno.iffar.edu.br', '1234', 'usr'),
-(136, 'qq', 'user_padrao.png', 'qq@q.c', 'asdf', 'usr');
+(133, 'Martin1', '6798ef0a2dd82.jpg', 'Martin@gmail.com1', '1231', 'adm'),
+(135, 'Martin', '679927186c96f.jpg', 'martin.2022311000@aluno.iffar.edu.br', '1234', 'usr');
 
 --
 -- Restrições para despejos de tabelas
 --
+
+--
+-- Limitadores para a tabela `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD CONSTRAINT `fk_forum` FOREIGN KEY (`id_forum`) REFERENCES `forum` (`id_forum`);
 
 --
 -- Limitadores para a tabela `forum`

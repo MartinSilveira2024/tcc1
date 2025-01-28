@@ -28,11 +28,22 @@
           <a class="nav-link" href="../index.php">Entrar</a>
         </li>
       <?php } ?>
-      <li class="nav-item">
+
+      <?php
+      if (isset($_SESSION)) { ?>
+        <li class="nav-item">
+          <a class="nav-link" href="../usuarios/desconect_usuario.php">Sair</a>
+        </li>
+      <?php } ?>
+
+
+      <!-- <li class="nav-item">
         <a class="nav-link" href="../usuarios/desconect_usuario.php">Sair</a>
       </li>
     </ul>
-  </div>
+  </div> -->
+
+
   <!-- <form class="form-inline">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
