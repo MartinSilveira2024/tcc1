@@ -5,7 +5,11 @@ head("Cadastro de usuário");
 
 <body>
     <?php include_once "../jogo/navbar.php" ?>
-
+    <style>
+        .form-control {
+            border: 0.5px solid black;
+        }
+    </style>
     <div class="container">
         <div class="row">
             <form action="cadastro_usuario.php" method="post">

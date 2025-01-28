@@ -1,10 +1,10 @@
 <?php
 session_start();
 include "../conecta.php";
-if (isset($_SESSION['id_usuario']) == false) {
-  echo "realize o login";
-  die;
-}
+// if (isset($_SESSION['id_usuario']) == false) {
+//   echo "realize o login";
+//   die;
+// }
 $sql = "SELECT * FROM jogos";
 $result = mysqli_query($conexao, $sql);
 if ($result) {
@@ -48,9 +48,6 @@ if ($result) {
               <h5 class='card_title'><?= $info['nome_jogo'] ?></h5>
               <p class='card-text'><?= $info['empresa_jogo'] ?></p>
               <a href="../forum/listar_foruns.php?id_jogo=<?= $info["id_jogo"] ?>">Entrar</a>
-              <?php if (($_SESSION['nivel_acesso']) == 'adm') { ?>
-                <br><br><a href="excluir_jogo.php?id_jogo=<?= $info["id_jogo"] ?>">Excluir Jogo</a>
-              <?php } ?>
             </div>
           </div>
         </div>

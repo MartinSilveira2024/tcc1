@@ -30,7 +30,7 @@
       <?php } ?>
 
       <?php
-      if (isset($_SESSION)) { ?>
+      if (isset($_SESSION['id_usuario']) == true) { ?>
         <li class="nav-item">
           <a class="nav-link" href="../usuarios/desconect_usuario.php">Sair</a>
         </li>

@@ -3,7 +3,6 @@
 session_start();
 include "../conecta.php";
 
-
 $id_forum = $_GET['id_forum'];
 $id = $_SESSION['id_usuario'];
 $sql2 = "SELECT * FROM usuarios WHERE id_usuario = $id";
@@ -96,7 +95,7 @@ head("Fórum do Jogo " . $info['titulo']);
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button class="btn btn-danger" onclick="excluir">Confirmar</button>
+                    <button class="btn btn-danger" onclick="excluir(<?= $info['id_comentario'] ?>)">Confirmar</button>
                 </div>
             </div>
         </div>
@@ -104,9 +103,9 @@ head("Fórum do Jogo " . $info['titulo']);
 
     <?= js() ?>
     <script>
-        function excluir(id_comentario) {
-            window.location.href = "../coment/excluir_coment.php?id_comentario=" + id_comentario + "&id_forum=<?= $id_forum ?>";
-        }
+       function excluir(id_comentario) {
+        window.location.href = "../coment/excluir_coment.php?id_comentario=" + id_comentario + "&id_forum=<?= $id_forum ?>";
+    }
     </script>
 </body>
 
