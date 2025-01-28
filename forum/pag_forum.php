@@ -31,7 +31,11 @@ head("Fórum do Jogo " . $info['titulo']);
 ?>
 
 <body class="bg-body-secondary">
-
+    <style>
+        .img {
+            border-radius: 50%;
+        }
+    </style>
     <div class="container bg-white">
         <div class="row">
             <?php
@@ -65,21 +69,45 @@ head("Fórum do Jogo " . $info['titulo']);
         ?>
             <div class="row mb-5 <?= ($i % 2 == 0) ? "bg-light-subtle" : "bg-body-tertiary" ?>">
                 <div class="col-3">
-                    <img width='50px' height='50px' src='../jogo/uploads/<?= $info['foto_user'] ?>'><br><?= $info['nome_user'] ?><br><?= $data ?>
+                    <img class='img' width='50px' height='50px' src='../jogo/uploads/<?= $info['foto_user'] ?>'><br><?= $info['nome_user'] ?><br><?= $data ?>
+                    <?php if ($_SESSION['id_usuario'] == $info['id_usuario']) { ?>
+                        <a href="../coment/alterar.php?id_comentario=<?= $info['id_comentario'] ?>&id_forum=<?= $id_forum ?>">Editar</a>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Excluir</button>
+                    <?php } ?>
                 </div>
                 <div class="col-9">
                     <?= $info['coment'] ?>
                 </div>
 
-                <?php if ($_SESSION['id_usuario'] == $info['id_usuario']) { ?>
-                    <a href="../coment/alterar.php?id_comentario=<?= $info['id_comentario'] ?>">Editar</a>
-                <?php } ?>
 
             </div>
         <?php } ?>
     </div>
-    <?= js() ?>
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tem certeza que deseja excluir</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Você deseja confirmar a exclusão?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button class="btn btn-danger" onclick="excluir">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?= js() ?>
+    <script>
+        function excluir(id_comentario) {
+            window.location.href = "../coment/excluir_coment.php?id_comentario=" + id_comentario + "&id_forum=<?= $id_forum ?>";
+        }
+    </script>
 </body>
 
 </html>

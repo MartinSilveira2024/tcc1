@@ -41,7 +41,7 @@ if ($result) {
                     <input type="hidden" name="id_comentario" value="<?= $_GET['id_comentario'] ?>">
 
                         <div class="input-box">
-
+                        <input type="hidden" name="id_forum" value="<?= $_GET['id_forum'] ?>">
                             <header>Alterar comentário</header>
 
 
