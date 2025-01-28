@@ -6,7 +6,7 @@ $id_forum = $_GET['id_forum'];
 require_once "../head.php";
 head("Cadastrar comentário");
 ?>
-
+<link rel="stylesheet" href="style.css">
 <body>
     <?php include_once "../jogo/navbar.php"; ?>
     <div class="wrapper">
@@ -30,7 +30,7 @@ head("Cadastrar comentário");
                         </div>
                         <input type="hidden" name="id_forum" value="<?php print $id_forum; ?>">
 
-                        <input type="submit" class="submit" value="Criar Forum">
+                        <input type="submit" class="submit" value="Cadastrar comentário">
                     </div>
                 </div>
             </div>

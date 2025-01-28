@@ -55,7 +55,7 @@ $id_jogo = $_GET['id_jogo'];
         ?>
       </tbody>
     </table>
-    <a href="cad_forum.php">Deseja criar um forum sobre esse jogo? Clique aqui</a>
+    <a href="cad_forum.php?id_jogo=<?= $info["id_jogo"] ?>">Deseja criar um forum sobre esse jogo? Clique aqui</a>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

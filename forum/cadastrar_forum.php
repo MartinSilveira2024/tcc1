@@ -15,7 +15,7 @@ echo $sql;
 if ($query_cadastros)
 
 {
-	header('Location: ../jogo/teste_cards.php');
+	header('Location: ../forum/listar_foruns.php?id_jogo='. $id_jogo);
 	
 }
 

@@ -23,15 +23,16 @@ head("Cadastro de fórum");
     <div class="container">
         <div class="row">
             <form action="cadastrar_forum.php" method="post">
+                <input type="hidden" name="id_jogo" value="<?= $_GET['id_jogo'] ?>">
                 <h3>Criar Fórum</h3>
                 <label class="form-label">Título do fórum
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="titulo">
                 </label>
                 <label class="form-label">Subtítulo do fórum
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="subtitulo">
                 </label>
                 <div class="form-floating">
-                    <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <textarea class="form-control" id="floatingTextarea2" style="height: 100px" name="corpo_texto"></textarea>
                     <label for="floatingTextarea2">Texto</label>
                 </div>
                 <br>

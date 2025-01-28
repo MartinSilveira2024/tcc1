@@ -1,6 +1,6 @@
 <?php
 require_once "../head.php";
-head("Cadastro de fórum");
+head("Cadastro de usuário");
 ?>
 
 <body>

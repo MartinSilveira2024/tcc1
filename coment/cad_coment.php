@@ -10,7 +10,7 @@ $sql = "INSERT INTO comentarios(id_forum, coment, id_usuario) VALUES ('$id_forum
 $query_cadastros = mysqli_query($conexao, $sql);
 
 if ($query_cadastros) {
-    header("Location: ../jogo/ver_jogos.php");
+    header("Location: ../forum/pag_forum.php?id_forum=". $id_forum);
 }
 else {
     echo "Erro ao cadastrar comentário";
