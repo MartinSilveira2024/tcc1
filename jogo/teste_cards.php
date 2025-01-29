@@ -1,11 +1,7 @@
 <?php
 session_start();
 include "../conecta.php";
-if (isset($_SESSION['id_usuario']) == false) {
-  echo"realize o login";
-  die;
- } ?>
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 

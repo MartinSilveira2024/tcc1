@@ -54,7 +54,7 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
           echo '<td>' . $info['nome_jogo'] . '</td>';
           echo '<td>' . $info['empresa_jogo'] . '</td>';
           echo '<td>  <buttonExcluir type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Excluir</button> </td>';
-          echo '<td> <a href="../jogo/alterar.php?id_jogo=' . $info["id_jogo"] . '"> Editar </a> </td>';
+          echo '<td> <a href="../jogo/alterar.php?id_jogo=' . $info["id_jogo"] . '"> Alterar </a> </td>';
           echo '</tr>';
         }
 

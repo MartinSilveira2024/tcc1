@@ -52,9 +52,9 @@ try {
     );
 
     //Recipients
-    $mail->setFrom($config['email'], 'Aula de Tópicos');
+    $mail->setFrom($config['email'], 'Supreme Forum Games');
     $mail->addAddress($usuario['email_user'], $usuario['nome_user']);     //Add a recipient
-    $mail->addReplyTo($config['email'], 'Aula de Tópicos');
+    $mail->addReplyTo($config['email'], 'Supreme Forum Games');
 
     //Content
     $mail->isHTML(true);        //Set email format to HTML

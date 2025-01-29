@@ -5,7 +5,6 @@ if (isset($_SESSION['id_usuario']) == false) {
     echo "realize o login";
     die;
 }
-include "../conecta.php";
 $sql = "SELECT * FROM categorias";
 $result = mysqli_query($conexao, $sql);
 if ($result) {
@@ -27,7 +26,7 @@ if ($result) {
 </head>
 
 <body>
-
+    <?php include "navbar.php"; ?>
     <form action="cadastro.php" method="post" enctype="multipart/form-data">
         <div class="wrapper">
             <div class="container main">

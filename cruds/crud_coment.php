@@ -42,7 +42,6 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
           <th scope="col">Id Forum</th>
           <th scope="col">Comentário</th>
           <th scope="col">Excluir</th>
-          <th scope="col">Alterar</th>
         </tr>
       </thead>
       <tbody>
@@ -53,7 +52,6 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
           echo '<td>' . $info['id_forum'] . '</td>';
           echo '<td>' . $info['coment'] . '</td>';
           echo '<td>  <buttonExcluir type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Excluir</button> </td>';
-          echo '<td> <a href="../coment/alterar.php?id_comentario=' . $info["id_comentario"] . '"> Alterar </a> </td>';
           echo '</tr>';
         }
 
