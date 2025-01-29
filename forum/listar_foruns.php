@@ -1,7 +1,16 @@
 <?php
 
 session_start();
+include "../conecta.php";
 $id_jogo = $_GET['id_jogo'];
+$id = $_SESSION['id_usuario'];
+$sql = "SELECT * FROM usuarios WHERE id_usuario = $id";
+$result = mysqli_query($conexao, $sql);
+if ($result) {
+    $infoe = mysqli_fetch_assoc($result);
+} else {
+    echo "erro ao conectar no bd";
+}
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +48,11 @@ $id_jogo = $_GET['id_jogo'];
           <th scope="col">Titulo</th>
           <th scope="col">Subtitulo</th>
           <th scope="col">Opções</th>
+          <?php
+      if ($_SESSION['id_usuario'] == $infoe['id_usuario']) {
+        echo '<th scope="col">Alterar</th>';
+      }
+      ?>
         </tr>
       </thead>
       <tbody>
@@ -49,9 +63,11 @@ $id_jogo = $_GET['id_jogo'];
           echo '<td>' . $info['titulo'] . '</td>';
           echo '<td>' . $info['subtitulo'] . '</td>';
           echo '<td> <a href="pag_forum.php?id_forum=' . $info["id_forum"] . '"> Entrar </a> </td>';
+          if ($_SESSION['id_usuario'] == $info['id_usuario']) {
+            echo '<td><a href="alterar.php?id_forum=' . $info["id_forum"] . '">Alterar</a></td>';
+          }
           echo '</tr>';
         }
-
         ?>
       </tbody>
     </table>
