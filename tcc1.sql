@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 29-Jan-2025 às 15:54
+-- Tempo de geração: 29-Jan-2025 às 19:08
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -61,20 +61,16 @@ CREATE TABLE IF NOT EXISTS `comentarios` (
   PRIMARY KEY (`id_comentario`),
   KEY `fk_usuario` (`id_usuario`),
   KEY `fk_forum` (`id_forum`)
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `comentarios`
 --
 
 INSERT INTO `comentarios` (`id_comentario`, `id_forum`, `id_usuario`, `coment`, `data_comment`) VALUES
-(38, 55, 133, ' Tedy', '2025-01-28 13:58:11'),
-(39, 54, 135, ' Verlei', '2025-01-28 14:56:19'),
-(40, 54, 135, ' Verlei', '2025-01-28 15:51:18'),
-(41, 54, 133, ' dsadssads', '2025-01-28 16:12:19'),
-(42, 54, 135, ' dsadsa', '2025-01-28 16:25:18'),
-(43, 54, 135, ' vasd', '2025-01-28 16:30:49'),
-(51, 54, 137, ' TESTE 1', '2025-01-28 17:04:02');
+(60, 60, 133, ' Muito legal este fórum\r\n', '2025-01-29 16:07:45'),
+(61, 61, 133, ' Consegui subir a diamante só de janna com esse fórum', '2025-01-29 16:08:07'),
+(62, 62, 133, ' Upei pra radiante graças isso, sogradece', '2025-01-29 16:08:27');
 
 -- --------------------------------------------------------
 
@@ -93,16 +89,16 @@ CREATE TABLE IF NOT EXISTS `forum` (
   PRIMARY KEY (`id_forum`),
   KEY `fk_usuarios` (`id_usuario`),
   KEY `fk_jogo_forum` (`id_jogo`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `forum`
 --
 
 INSERT INTO `forum` (`id_forum`, `id_jogo`, `id_usuario`, `titulo`, `subtitulo`, `corpo_texto`) VALUES
-(54, 33, 135, 'Verlei', 'Tedy', '  Moreira'),
-(55, 33, 133, 'dsadsa', 'dsadsa', 'dsadsa'),
-(57, 37, 133, 'dsa', 'dsa', 'dsa');
+(60, 38, 133, 'Brutal legend', 'como platinar', 'Como platinar 100% o jogo \"brutal legend\"'),
+(61, 39, 133, 'League of Legends', 'Como subir de elo', 'Um guia de como subir rápido de elo'),
+(62, 40, 133, 'Fortnite', 'Como subir ao radiante', 'Como upar rápiado ao radiante em Fortnite\r\n');
 
 -- --------------------------------------------------------
 
@@ -119,16 +115,16 @@ CREATE TABLE IF NOT EXISTS `jogos` (
   `foto_jogo` varchar(255) NOT NULL,
   PRIMARY KEY (`id_jogo`),
   KEY `fk_categoria` (`id_categoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `jogos`
 --
 
 INSERT INTO `jogos` (`id_jogo`, `nome_jogo`, `empresa_jogo`, `id_categoria`, `foto_jogo`) VALUES
-(33, 'Thiago krug', 'FORTMNIT', 2, '679784b502525.jpg'),
-(35, 'dsadsa', 'dsadsa', 1, '67978b9cdade9.jpg'),
-(37, 'Fortnite', 'Epic Games', 2, '679a4649db5b5.jpg');
+(38, 'Brutal legend', 'Double Fine Productions', 4, '679a7a0e8b79e.jpg'),
+(39, 'League of Legends', 'Riot Games', 2, '679a7a1ec7431.jpg'),
+(40, 'Fortnite', 'Epic Games', 2, '679a7a2f70b6d.jpg');
 
 -- --------------------------------------------------------
 
@@ -167,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `nivel_acesso` varchar(3) NOT NULL,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `email_user` (`email_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=139 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=141 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `usuarios`
@@ -176,7 +172,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 INSERT INTO `usuarios` (`id_usuario`, `nome_user`, `foto_user`, `email_user`, `senha_user`, `nivel_acesso`) VALUES
 (133, 'Martin1', '679a437ee3fd8.jpg', 'Martin@gmail.com1', '1231', 'adm'),
 (135, 'Martin', '679930da912fd.jpg', 'martin.2022311000@aluno.iffar.edu.br', '1234', 'usr'),
-(138, 'Martin654', '679a4d5065131.jpg', 'Martin321@gmail.com', '123', 'usr');
+(139, 'dsa', '679a54d537221.jpg', 'dsa@gmail.com', '123', 'usr'),
+(140, 'thisago', '679a7525456c5.jpg', 't@t.t', '123', 'usr');
 
 --
 -- Restrições para despejos de tabelas
