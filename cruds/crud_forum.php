@@ -15,6 +15,7 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
   <title>Document</title>
 </head>
 
@@ -36,7 +37,7 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
   ?>
   <br>
   <div class="container">
-    <?= toast() ?>
+  <?= toast() ?>
     <caption>Listagem de foruns</caption>
     <table class="table table-hover">
       <thead>
@@ -86,12 +87,12 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
       </tbody>
     </table>
   </div>
-  <?= js(); ?>
+  <?=js();?>
   <script>
-    toast = document.getElementById('liveToast');
-    if (toast != null) {
-      bootstrap.Toast.getOrCreateInstance(toast).show();
-    }
+      toast = document.getElementById('liveToast');
+        if (toast != null) {
+            bootstrap.Toast.getOrCreateInstance(toast).show();
+        }
   </script>
 </body>
 

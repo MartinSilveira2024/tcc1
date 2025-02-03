@@ -11,6 +11,7 @@ $senha = $_POST['senha'];
 $sql = "UPDATE usuarios SET nome_user ='$nome', email_user='$email', senha_user='$senha' WHERE id_usuario=$id_usuario";
 $result = mysqli_query($conexao, $sql);
 if ($result) {
+    $_SESSION['msg'] = "Usuário alterado com sucesso";
     header("Location: ../cruds/crud_usuario.php");
 } else {
     echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);
