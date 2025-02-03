@@ -36,6 +36,7 @@ head("Fórum do Jogo " . $info['titulo']);
         }
     </style>
     <div class="container bg-white">
+        <?= toast() ?>
         <div class="row">
             <?php
             echo '<h1> Titulo: ' . $info['titulo'] . "</h1> <br><br> ";
@@ -70,7 +71,7 @@ head("Fórum do Jogo " . $info['titulo']);
                 <div class="col-3">
                     <img class='img' width='50px' height='50px' src='../jogo/uploads/<?= $info['foto_user'] ?>'><br><?= $info['nome_user'] ?><br><?= $data ?>
                     <?php if ($_SESSION['id_usuario'] == $info['id_usuario']) { ?>
-                        <a href="../coment/alterar.php?id_comentario=<?= $info['id_comentario'] ?>&id_forum=<?= $id_forum ?>">Editar</a>
+                        <a href="../coment/alterar.php?id_comentario=<?= $info['id_comentario'] ?>&id_forum=<?= $id_forum ?>" class="btn btn-warning">Editar</a>
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Excluir</button>
                     <?php } ?>
                 </div>
@@ -103,9 +104,14 @@ head("Fórum do Jogo " . $info['titulo']);
 
     <?= js() ?>
     <script>
-       function excluir(id_comentario) {
-        window.location.href = "../coment/excluir_coment.php?id_comentario=" + id_comentario + "&id_forum=<?= $id_forum ?>";
-    }
+        function excluir(id_comentario) {
+            window.location.href = "../coment/excluir_coment.php?id_comentario=" + id_comentario + "&id_forum=<?= $id_forum ?>";
+        }
+
+        toast = document.getElementById('liveToast');
+        if (toast != null) {
+            bootstrap.Toast.getOrCreateInstance(toast).show();
+        }
     </script>
 </body>
 

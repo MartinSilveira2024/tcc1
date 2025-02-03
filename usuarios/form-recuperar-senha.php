@@ -14,7 +14,7 @@
 <?php require_once "../jogo/navbar.php"?>
 
 
-    <form action="update_usuario.php" method="post">
+    <form action="recuperar.php" method="post">
         <div class="wrapper">
             <div class="container main">
                 <div class="row">

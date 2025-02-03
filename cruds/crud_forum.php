@@ -14,9 +14,8 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <title>Document</title>
-  <!-- <link rel="stylesheet" href="../styles.css"> -->
 </head>
 
 <body>
@@ -24,6 +23,7 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
 
   <?php
   include "../conecta.php";
+  include_once "../head.php";
   include_once "../jogo/navbar.php";
   $sql = "SELECT * FROM forum";
   $result = mysqli_query($conexao, $sql);
@@ -36,14 +36,15 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
   ?>
   <br>
   <div class="container">
+    <?= toast() ?>
     <caption>Listagem de foruns</caption>
     <table class="table table-hover">
       <thead>
         <tr>
           <th scope="col">Titulo</th>
           <th scope="col">Subtitulo</th>
-          <th scope="col">Excluir</th>
           <th scope="col">Alterar</th>
+          <th scope="col">Excluir</th>
         </tr>
       </thead>
       <tbody>
@@ -53,8 +54,8 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
           echo '<tr>';
           echo '<td>' . $info['titulo'] . '</td>';
           echo '<td>' . $info['subtitulo'] . '</td>';
+          echo '<td> <a href="../forum/alterar.php?id_forum=' . $info["id_forum"] . '" class="btn btn-warning"> Alterar </a> </td>';
           echo '<td>  <buttonExcluir type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Excluir</button> </td>';
-          echo '<td> <a href="../forum/alterar.php?id_forum=' . $info["id_forum"] . '"> Alterar </a> </td>';
           echo '</tr>';
         }
 
@@ -85,7 +86,13 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
       </tbody>
     </table>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <?= js(); ?>
+  <script>
+    toast = document.getElementById('liveToast');
+    if (toast != null) {
+      bootstrap.Toast.getOrCreateInstance(toast).show();
+    }
+  </script>
 </body>
 
 </html>

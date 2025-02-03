@@ -14,6 +14,7 @@ if ($result = mysqli_query($conexao, $sql) === TRUE) {
 }
 // $result = mysqli_query($conexao, $sql);
 if ($result) {
+    $_SESSION['msg'] = "Usuário excluido com sucesso";
     header("Location: crud_usuario.php");
 } else {
     echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);

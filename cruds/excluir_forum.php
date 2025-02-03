@@ -6,6 +6,7 @@ $id_forum = $_GET['id_forum'];
 $sql = "DELETE FROM forum WHERE id_forum=$id_forum";
 $result = mysqli_query($conexao, $sql);
 if ($result) {
+    $_SESSION['msg'] = "Fórum excluido com sucesso";
     header("Location: crud_forum.php");
 } else {
     echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);

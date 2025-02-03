@@ -52,6 +52,10 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
                     <td>Comentários </td>
                     <td> <a href="crud_coment"> Entrar </a></td>
                 </tr>
+                <tr>
+                    <td>Categorias </td>
+                    <td> <a href="crud_categorias"> Entrar </a></td>
+                </tr>
             </tbody>
         </table>
     </div>

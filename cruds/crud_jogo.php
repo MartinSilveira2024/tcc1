@@ -24,6 +24,7 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
 
   <?php
   include "../conecta.php";
+  include_once "../head.php";
   include_once "../jogo/navbar.php";
   $sql = "SELECT * FROM jogos";
   $result = mysqli_query($conexao, $sql);
@@ -36,14 +37,15 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
   ?>
   <br>
   <div class="container">
+  <?= toast() ?>
     <caption>Listagem de jogos</caption>
     <table class="table table-hover">
       <thead>
         <tr>
           <th scope="col">Nome</th>
           <th scope="col">Empresa</th>
-          <th scope="col">Excluir</th>
           <th scope="col">Alterar</th>
+          <th scope="col">Excluir</th>
         </tr>
       </thead>
       <tbody>
@@ -53,8 +55,8 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
           echo '<tr>';
           echo '<td>' . $info['nome_jogo'] . '</td>';
           echo '<td>' . $info['empresa_jogo'] . '</td>';
+          echo '<td> <a href="../jogo/alterar.php?id_jogo=' . $info["id_jogo"] . '"  class="btn btn-warning"> Alterar </a> </td>';
           echo '<td>  <buttonExcluir type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Excluir</button> </td>';
-          echo '<td> <a href="../jogo/alterar.php?id_jogo=' . $info["id_jogo"] . '"> Alterar </a> </td>';
           echo '</tr>';
         }
 
@@ -86,6 +88,13 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
     </table>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <?= js(); ?>
+  <script>
+    toast = document.getElementById('liveToast');
+    if (toast != null) {
+      bootstrap.Toast.getOrCreateInstance(toast).show();
+    }
+  </script>
 </body>
 
 </html>

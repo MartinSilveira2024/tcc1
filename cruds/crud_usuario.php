@@ -23,6 +23,7 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
 
     <?php
     include "../conecta.php";
+    include_once "../head.php";
     include_once "../jogo/navbar.php";
     $sql = "SELECT * FROM usuarios";
     $result = mysqli_query($conexao, $sql);
@@ -35,13 +36,15 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
     ?> 
 <br>
     <div class="container">
+    <?= toast() ?>
     <caption>Listagem de usuarios</caption>
  <table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">Nome</th>
       <th scope="col">Email</th>
-      <th scope="col">Opções</th>
+      <th scope="col">Alterar</th>
+      <th scope="col">Excluir</th>
     </tr>
   </thead>
   <tbody>
@@ -51,6 +54,7 @@ foreach ($infos as $info) {
     echo '<tr>';
     echo '<td>' . $info['nome_user'] . '</td>';
     echo '<td>' . $info['email_user'] . '</td>';
+    echo '<td> <a href="../usuarios/tela_alterar_usuario.php?id_usuario=' . $info["id_usuario"] . '" class="btn btn-warning"> Alterar </a> </td>';
     echo '<td>  <buttonExcluir type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Excluir</button> </td>';
     echo '</tr>';
 }
@@ -83,6 +87,13 @@ foreach ($infos as $info) {
 </table>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <?= js(); ?>
+  <script>
+    toast = document.getElementById('liveToast');
+    if (toast != null) {
+      bootstrap.Toast.getOrCreateInstance(toast).show();
+    }
+  </script>
 </body>
 
 </html>

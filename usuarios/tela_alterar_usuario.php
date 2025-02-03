@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "../conecta.php";
-$id = $_SESSION['id_usuario'];
+$id = $_GET['id_usuario'];
 $sql = "SELECT * FROM usuarios WHERE id_usuario = '$id'";
 $result = mysqli_query($conexao, $sql);
 if ($result) {
@@ -26,12 +26,14 @@ if ($result) {
 
 <body>
 
-<?php require_once "../jogo/navbar.php"?>
+<?php require_once "../jogo/navbar.php";
+include_once "../head.php";?>
 
 
-    <form action="update_usuario.php" method="post">
+    <form action="alterar_usuario.php" method="post">
         <div class="wrapper">
             <div class="container main">
+            <?= toast() ?>
                 <div class="row">
                     <div class="col-md-6 side-image">
 
@@ -39,7 +41,7 @@ if ($result) {
                     <div class="col-md-6 right">
 
                         <div class="input-box">
-
+                        <input type="hidden" name="id_usuario" value="<?= $_GET['id_usuario']?>">
                             <header>Atualizar infos</header>
 
 
@@ -68,7 +70,15 @@ if ($result) {
             </div>
 
     </form>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+         toast = document.getElementById('liveToast');
+        if (toast != null) {
+            bootstrap.Toast.getOrCreateInstance(toast).show();
+        }
+    </script>
 </body>
+
 <h3>Esta imagem foi retirada do jogo League of legends que foi criado pela empresa Riot Games</h3>
 </html>
