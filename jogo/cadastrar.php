@@ -61,9 +61,10 @@ if ($result) {
                             </div>
                             <div class="input-field">
                                 <div class="input-field">
-                                    <input type="submit" class="submit" value="Inserir jogo">
+                                    <input type="submit" class="submit" value="Inserir jogo"> <br> 
                                 </div>
                             </div>
+                            <a href="ver_jogos.php" class="btn btn-primary">Voltar</a>
                         </div>
                     </div>
                 </div>

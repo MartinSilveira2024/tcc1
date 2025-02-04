@@ -29,9 +29,10 @@ head("Cadastrar comentário");
                             Comentario:<Textarea type="text" name="coment"> </Textarea> <br><br>
                         </div>
                         <input type="hidden" name="id_forum" value="<?php print $id_forum; ?>">
-
-                        <input type="submit" class="submit" value="Cadastrar comentário">
+                        <div class="input-field">
+                        <input type="submit" class="submit" value="Cadastrar comentário"> <br>
                     </div>
+                    <a href="../forum/pag_forum.php?id_forum=<?= $_GET['id_forum'] ?>" class="btn btn-primary">Voltar</a>
                 </div>
             </div>
         </div>

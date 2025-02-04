@@ -55,13 +55,11 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
           echo '<tr>';
           echo '<td>' . $info['nome_jogo'] . '</td>';
           echo '<td>' . $info['empresa_jogo'] . '</td>';
-          echo '<td> <a href="../jogo/alterar.php?id_jogo=' . $info["id_jogo"] . '"  class="btn btn-warning"> Alterar </a> </td>';
-          echo '<td>  <buttonExcluir type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Excluir</button> </td>';
+          echo '<td> <a href="../jogo/alterar_jogo.php?id_jogo=' . $info["id_jogo"] . '"  class="btn btn-warning"> Alterar </a> </td>';
+          echo '<td>  <buttonExcluir type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal' . $info["id_jogo"] . '">Excluir</button> </td>';
           echo '</tr>';
-        }
 
-        ?>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+         ?> <div class="modal fade" id="exampleModal<?=$info["id_jogo"]?>" tabindex="-1" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -78,6 +76,7 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
             </div>
           </div>
         </div>
+      <?php  } ?>
         <script>
           function excluir(id_jogo) {
             window.location.href = "excluir_jogo.php?id_jogo=" + id_jogo;

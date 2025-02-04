@@ -43,6 +43,7 @@ head("Cadastro de fórum");
                 </div>
                 <br>
                 <input type="submit" class="btn btn-primary" value="Criar Fórum">
+                <a href="listar_foruns.php?id_jogo=<?= $_GET['id_jogo'] ?>" class="btn btn-primary">Voltar</a>
             </form>
         </div>
     </div>

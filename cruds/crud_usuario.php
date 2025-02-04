@@ -57,27 +57,26 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
           echo '<td> <a href="../usuarios/tela_alterar_usuario.php?id_usuario=' . $info["id_usuario"] . '" class="btn btn-warning"> Alterar </a> </td>';
           echo '<td>  <buttonExcluir type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Excluir</button> </td>';
           echo '</tr>';
-        }
 
         ?>
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Tem certeza que deseja excluir</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                Você deseja confirmar a exclusão?
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button class="btn btn-danger" onclick="excluir(<?= $info['id_usuario'] ?>)">Confirmar</button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Tem certeza que deseja excluir</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Você deseja confirmar a exclusão?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button class="btn btn-danger" onclick="excluir(<?= $info['id_usuario'] ?>)">Confirmar</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        <?php  } ?>
         <script>
           function excluir(id_usuario) {
             window.location.href = "excluir_usuario.php?id_usuario=" + id_usuario;

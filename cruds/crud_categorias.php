@@ -49,7 +49,6 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
       </thead>
       <tbody>
         <?php
-
         foreach ($infos as $info) {
           echo '<tr>';
           echo '<td>' . $info['nome_categoria'] . '</td>';

@@ -27,12 +27,14 @@ if ($result) {
 
 <body>
 
-<?php require_once "../jogo/navbar.php"?>
+<?php require_once "../jogo/navbar.php";
+include_once "../head.php"; ?>
 
 
     <form action="update_categoria.php" method="post">
         <div class="wrapper">
             <div class="container main">
+            <?= toast() ?>
                 <div class="row">
                     <div class="col-md-6 side-image">
 
@@ -49,9 +51,10 @@ if ($result) {
                                 <input type="text" class="input" name="nome_categoria" value="<?php echo $usuario['nome_categoria'] ?>" required> <br>
                                 <label for="pass">Titulo</label>
                             </div>
-
-                                    <input type="submit" class="submit" value="Atualizar">
+                            <div class="input-field">
+                                    <input type="submit" class="submit" value="Atualizar"> <br>
                                 </div>
+                                <a href="../cruds/crud_categoria.php?id_categoria=<?= $_GET['id_categoria'] ?>" class="btn btn-primary">Voltar</a>
                             </div>
                         </div>
                     </div>
@@ -59,7 +62,13 @@ if ($result) {
             </div>
 
     </form>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <?= js(); ?>
+        <script>
+            toast = document.getElementById('liveToast');
+            if (toast != null) {
+                bootstrap.Toast.getOrCreateInstance(toast).show();
+            }
+        </script>
 </body>
 <h3>Esta imagem foi retirada do jogo League of legends que foi criado pela empresa Riot Games</h3>
 </html>

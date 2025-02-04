@@ -36,7 +36,7 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
   ?>
   <br>
   <div class="container">
-  <?= toast() ?>
+    <?= toast() ?>
     <caption>Listagem de comentarios</caption>
     <table class="table table-hover">
       <thead>
@@ -55,27 +55,26 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
           echo '<td>' . $info['coment'] . '</td>';
           echo '<td>  <buttonExcluir type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Excluir</button> </td>';
           echo '</tr>';
-        }
-
         ?>
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Tem certeza que deseja excluir</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                Você deseja confirmar a exclusão?
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button class="btn btn-danger" onclick="excluir(<?= $info['id_comentario'] ?>)">Confirmar</button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Tem certeza que deseja excluir</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Você deseja confirmar a exclusão?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button class="btn btn-danger" onclick="excluir(<?= $info['id_comentario'] ?>)">Confirmar</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+
+        <?php  } ?>
         <script>
           function excluir(id_comentario) {
             window.location.href = "excluir_coment.php?id_comentario=" + id_comentario;

@@ -55,13 +55,11 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
           echo '<tr>';
           echo '<td>' . $info['titulo'] . '</td>';
           echo '<td>' . $info['subtitulo'] . '</td>';
-          echo '<td> <a href="../forum/alterar.php?id_forum=' . $info["id_forum"] . '" class="btn btn-warning"> Alterar </a> </td>';
+          echo '<td> <a href="../forum/alterar_forum.php?id_forum=' . $info["id_forum"] . '" class="btn btn-warning"> Alterar </a> </td>';
           echo '<td>  <buttonExcluir type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Excluir</button> </td>';
           echo '</tr>';
-        }
 
-        ?>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+          ?> <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -78,6 +76,8 @@ if (isset($_SESSION['nivel_acesso']) != 'adm') {
             </div>
           </div>
         </div>
+      <?php  } ?>
+
         <script>
           function excluir(id_forum) {
             window.location.href = "excluir_forum.php?id_forum=" + id_forum;

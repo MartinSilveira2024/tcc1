@@ -60,9 +60,9 @@ include_once "../head.php";?>
                                 <label for="pass">Senha</label>
                             </div>
 
-                                    <input type="submit" class="submit" value="Atualizar">
+                                    <input type="submit" class="submit" value="Atualizar"> <br>
                                 </div>
-                                
+                                <a href="../cruds/crud_usuario.php?id_usuario=<?= $_GET['id_usuario'] ?>" class="btn btn-primary">Voltar</a>
                             </div>
                         </div>
                     </div>
