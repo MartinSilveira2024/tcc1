@@ -58,7 +58,7 @@ if ($result) {
                             </div>
                             <div class="input-field">
                                 <div class="input-field">
-                                    <textarea class="form-control" name="corpo_texto" value="<?php echo $usuario['corpo_texto'] ?>">  </textarea> <br>
+                                    <textarea class="form-control" name="corpo_texto"><?php echo $usuario['corpo_texto'] ?></textarea> <br>
                                 </div>
 
                                 <input type="submit" class="submit" value="Atualizar"> <br>

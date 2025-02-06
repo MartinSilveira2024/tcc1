@@ -54,7 +54,7 @@ include_once "../head.php"; ?>
                             <div class="input-field">
                                     <input type="submit" class="submit" value="Atualizar"> <br>
                                 </div>
-                                <a href="../cruds/crud_categoria.php?id_categoria=<?= $_GET['id_categoria'] ?>" class="btn btn-primary">Voltar</a>
+                                <a href="../cruds/crud_categorias.php" class="btn btn-primary">Voltar</a>
                             </div>
                         </div>
                     </div>
