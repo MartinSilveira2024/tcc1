@@ -4,9 +4,14 @@ session_start();
 $id_jogo = $_GET['id_jogo'];
 
 $sql = "DELETE FROM jogos WHERE id_jogo=$id_jogo";
-$result = mysqli_query($conexao, $sql);
+if ($result = mysqli_query($conexao, $sql) == TRUE) {
+  }  else {
+        if ($conexao->errno == 1451) {
+            $_SESSION['msg'] = "Não é possível excluir, pois este jogo está relacionado a outros dados no sistema";
+            header("Location: crud_jogo.php");
+        }
+} 
 if ($result) {
-    $_SESSION['msg'] = "Jogo excluido com sucesso";
     header("Location: crud_jogo.php");
 } else {
     echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);

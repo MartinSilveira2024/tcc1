@@ -1,6 +1,6 @@
 /* POPPINS FONT */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-*{
+form{
     font-family: 'Poppins', sans-serif;
 }
 .wrapper{
@@ -14,7 +14,7 @@
     min-height: 100vh;
 }
 .side-image{
-    background-image: url("fizz1.jpg");
+    background-image: url("fizz.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -53,12 +53,12 @@ i{
   width: 330px;
   box-sizing: border-box;
 }
-img{
+/* img{
     width: 35px;
     position: absolute;
     top: 30px;
     left: 30px;
-}
+} */
 .input-box header{
     font-weight: 700;
     text-align: center;

@@ -10,6 +10,7 @@ $coment = $_POST['coment'];
 $sql = "UPDATE comentarios SET coment ='$coment' WHERE id_comentario=$id_coment";
 $result = mysqli_query($conexao, $sql);
 if ($result) {
+    $_SESSION['msg'] = "Comentário alterado com sucesso!";
     header("Location: ../forum/pag_forum.php?id_forum=$id_forum");
 } else {
     echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);
